@@ -1,0 +1,46 @@
+Purpose:
+Purpose Statement: The purpose of our ETMS is to streamline task management within our organization by providing a centralized platform for task creation, assignment, tracking, and communication among employees and administrators.
+Key Objectives:
+Enhance productivity by providing a structured system for task allocation and management.
+Improve collaboration and communication among team members by enabling real-time updates and notifications.
+Facilitate efficient monitoring and tracking of task progress to ensure timely completion.
+Scope:
+Functionalities:
+User Authentication: Login and registration for employees and administrators.
+Task Creation: Admins can create tasks/projects with descriptions, deadlines, and priority levels.
+Task Assignment: Assign tasks to specific employees or teams, with the ability to reassign if needed.
+Task Tracking: Employees can update task statuses (e.g., in progress, completed) and add comments or attachments.
+Notifications: Automated notifications for task assignments, updates, and approaching deadlines.
+Reporting: Generate reports for task analytics, such as task completion rates, average time taken, etc.
+Limitations/Constraints:
+Supported Devices: Initially focused on desktop browsers, with potential for mobile optimization in future iterations.
+Integration: Integration with email/calendar systems may be considered in future phases but not in the initial version.
+Workflow:
+Admin Workflow:
+Admin logs in to the system.
+Creates new tasks/projects with descriptions, deadlines, and assigns them to employees.
+Monitors task progress and can reassign tasks if needed.
+Generates reports for task analytics.
+Employee Workflow:
+Employee logs in and views assigned tasks/projects.
+Updates task statuses (e.g., in progress, completed), adds comments, and uploads relevant files.
+Receives notifications for new task assignments, updates, and approaching deadlines.
+Collaborates with team members through task discussions/comments.
+Use-Case Diagram:
+Actors:
+Admin: Manages tasks, assigns tasks to employees, generates reports.
+Employee: Receives tasks, updates task statuses, communicates with team members.
+System: Handles user authentication, task creation, assignment, notifications, and reporting.
+Use Cases:
+Login: Admin/Employee logs into the system.
+Create Task: Admin creates a new task/project.
+Assign Task: Admin assigns a task to an employee.
+Update Task Status: Employee updates the status of a task.
+Send Notification: System sends notifications for task updates/deadlines.
+Generate Report: Admin generates a report for task analytics.
+This elaboration should provide a clear understanding of your project's purpose, scope, workflow, and use cases. Feel free to adjust or add details based on your specific project requirements and functionalities.
+
+
+
+
+
