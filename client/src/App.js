@@ -6,7 +6,9 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Admin from './pages/Admin'
 import TeacherInfo from './components/admin/teacherinfo'
+import StudentInfo from './components/admin/studentinfo'
 import Dashboard from './components/admin/dashboard'
+import NotFound from './components/404';
 
 
 function App() {
@@ -27,7 +29,9 @@ function App() {
         <Route path="admin" element={<Admin />} >
           <Route path='dashboard' element={<Dashboard/>} />
           <Route path='teacherinfo' element={<TeacherInfo/>}/>
+          <Route path='studentinfo' element={<StudentInfo/>}/>
         </Route>
+        <Route path='*' element={<NotFound />}/>
       </Routes>
       <ToastContainer />
     </div>
