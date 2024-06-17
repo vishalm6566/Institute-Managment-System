@@ -1,10 +1,10 @@
 import React from 'react'
-import Sidebar from '../../components/admin/sidebar'
 
 function Admin() {
   return (
     <div>
-        <Sidebar/>
+      <h1>dashboard</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, dignissimos!</p>
     </div>
   )
 }
