@@ -4,13 +4,13 @@ import { Outlet } from 'react-router-dom'
 
 function Admin() {
   return (
-    <div style={{display : 'flex', flexDirection : 'row'}}>
-        <Sidebar />
-        <div>
-          <div><h1>Admin Panel</h1></div>
-        <Outlet />
+    <div className="d-flex">
+            <Sidebar />
+            <div className="container" style={{ marginLeft: '250px' }}>
+                <h2 style={{ marginLeft: '250px'}}>Institute Managment System</h2>
+                <Outlet />
+            </div>
         </div>
-    </div>
   )
 }
 
