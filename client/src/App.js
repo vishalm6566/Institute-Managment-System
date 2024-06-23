@@ -9,7 +9,8 @@ import TeacherInfo from './components/admin/teacherinfo'
 import StudentInfo from './components/admin/studentinfo'
 import Dashboard from './components/admin/dashboard'
 import NotFound from './components/404';
-
+import Home from './pages/Home'
+import ContactUs from './components/admin/conatctus';
 
 function App() {
 
@@ -24,6 +25,8 @@ function App() {
     <div>
       <Routes>
         <Route path='/' element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path='/Contactus' element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="admin" element={<Admin />} >
