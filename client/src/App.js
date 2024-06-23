@@ -13,6 +13,7 @@ import Dashboard from './components/admin/dashboard'
 import NotFound from './components/404';
 import Home from './pages/Home'
 import ContactUs from './components/admin/conatctus';
+import AddTask from './components/admin/addtask';
 import Feedback from './components/admin/feedback';
 import Student from './pages/Student';
 import Teacher from './pages/Teacher';
@@ -31,7 +32,7 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path='/' element={<Login />} />
+        <Route path='/' element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path='/Contactus' element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
@@ -39,6 +40,7 @@ function App() {
         <Route path="admin" element={<Admin />} >
           <Route path='dashboard' element={<Dashboard/>} />
           <Route path='teacherinfo' element={<TeacherInfo/>}/>
+          <Route path='addtask' element={<AddTask/>}/>
           <Route path="teacher/:id" element={<TeacherProfile />} />
           <Route path='studentinfo' element={<StudentInfo/>}/>
           <Route path="student/:id" element={<StudentProfile />} />

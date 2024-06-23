@@ -1,0 +1,27 @@
+/* AddTask.css */
+
+.container {
+     margin-top: 20px; 
+    /* max-width: 600px;
+    margin: auto;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9 ; */
+  }
+  
+  /* .border {
+    padding: 20px;
+    border-radius: 5px;
+  } */
+  
+  .bg-white {
+    background-color: #fff;
+  }
+  
+  /* .rounded {
+    border-radius: 5px;
+  } */
+  
+  .text-left {
+    text-align: left;
+  }
+  
