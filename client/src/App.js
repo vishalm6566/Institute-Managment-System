@@ -7,8 +7,11 @@ import Register from './pages/Register';
 import Admin from './pages/Admin'
 import TeacherInfo from './components/admin/teacherinfo'
 import StudentInfo from './components/admin/studentinfo'
+import StudentProfile from './components/admin/studentProfile'
+import TeacherProfile from './components/admin/teacherProfile'
 import Dashboard from './components/admin/dashboard'
 import NotFound from './components/404';
+
 
 
 function App() {
@@ -29,7 +32,9 @@ function App() {
         <Route path="admin" element={<Admin />} >
           <Route path='dashboard' element={<Dashboard/>} />
           <Route path='teacherinfo' element={<TeacherInfo/>}/>
+          <Route path="teacher/:id" element={<TeacherProfile />} />
           <Route path='studentinfo' element={<StudentInfo/>}/>
+          <Route path="student/:id" element={<StudentProfile />} />
         </Route>
         <Route path='*' element={<NotFound />}/>
       </Routes>

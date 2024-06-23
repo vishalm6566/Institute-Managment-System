@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 // import './StudentInfo.css';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const StudentInfo = () => {
   const [students, setStudents] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Simulated data fetching
     const fetchData = async () => {
       const data = [
         {
@@ -33,6 +33,10 @@ const StudentInfo = () => {
     fetchData();
   }, []);
 
+  const showStudentDetails = (student) => {
+    navigate(`/admin/student/${student.id}`, { state : student})
+  };
+
   return (
     <div className="container mt-5">
       <h2>Student Information</h2>
@@ -54,12 +58,15 @@ const StudentInfo = () => {
               <td>{student.email}</td>
               <td>{student.phone}</td>
               <td>
-                <Link
+                {/* <Link
                   to={`/admin/student/${student.id}`}
                   className="btn btn-primary"
                 >
                   View Full Profile
-                </Link>
+                </Link> */}
+                <button className="btn btn-primary" onClick={()=>{showStudentDetails(student)}}>
+                  view Profile
+                </button>
               </td>
             </tr>
           ))}
