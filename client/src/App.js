@@ -13,7 +13,11 @@ import Dashboard from './components/admin/dashboard'
 import NotFound from './components/404';
 import Home from './pages/Home'
 import ContactUs from './components/admin/conatctus';
-
+import Feedback from './components/admin/feedback';
+import Student from './pages/Student';
+import Teacher from './pages/Teacher';
+import StudentFeedback from './components/student/feedback';
+import StdProfile from './components/student/profile';
 
 function App() {
 
@@ -38,6 +42,13 @@ function App() {
           <Route path="teacher/:id" element={<TeacherProfile />} />
           <Route path='studentinfo' element={<StudentInfo/>}/>
           <Route path="student/:id" element={<StudentProfile />} />
+          <Route path='feedback' element={<Feedback/>} />
+        </Route>
+        <Route path="student" element={<Student />} >
+        <Route path='profile' element={<StdProfile/>} />
+          <Route path='feedback' element={<StudentFeedback/>} />
+        </Route>
+        <Route path="teacher" element={<Teacher />} >
         </Route>
         <Route path='*' element={<NotFound />}/>
       </Routes>
