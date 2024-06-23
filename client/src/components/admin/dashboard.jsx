@@ -37,7 +37,7 @@ const cardData = [
 
 const Dashboard = () => {
     return (
-        <div className="container mt-5">
+        <div className="container mt-3">
             <div className="row">
                 {cardData.map((card, index) => (
                     <div key={index} className="col-md-4 mb-4">

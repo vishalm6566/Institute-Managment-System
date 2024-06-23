@@ -2,7 +2,7 @@ import React from 'react'
 import Sidebar from '../components/admin/sidebar'
 import { Outlet } from 'react-router-dom'
 
-function Admin() {
+function Teacher() {
   return (
     <div className="d-flex">
             <Sidebar />
@@ -14,4 +14,4 @@ function Admin() {
   )
 }
 
-export default Admin
+export default Teacher

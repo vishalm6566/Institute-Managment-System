@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
 
-const TeacherProfile = () => {
-  const { id } = useParams();
-  const { state } = useLocation();
-  const [teacher, setTeacher] = useState(null);
-
+const StudentProfile = () => {
+  const [student, setStudent] = useState(null);
+  
   useEffect(() => {
-    const fetchTeacher = async () => {
-      setTeacher(state);
+      const fetchStudent = async () => {
+          setStudent((prev)=>({...prev, id : 1, name : "Nitin", email : "nitin@gmail.com", address : 'pune', phone : '+914567876547'}));
     };
+    
+    fetchStudent();
+}, []);
 
-    fetchTeacher();
-  }, [id]);
 
-  if (!teacher) {
+  if (!student) {
     return <p>Loading...</p>;
   }
 
@@ -27,18 +26,18 @@ const TeacherProfile = () => {
           className="rounded-circle profile-img m-4"
         />
         <div className="card-body">
-          <h3 className="card-title">{teacher.name}</h3>
+          <h3 className="card-title">{student.name}</h3>
           <p className="card-text">
-            <strong>Email:</strong> {teacher.email}
+            <strong>Email:</strong> {student.email}
           </p>
           <p className="card-text">
-            <strong>Subject:</strong> {teacher.subject}
+            <strong>id:</strong> {student.id}
           </p>
           <p className="card-text">
-            <strong>Address:</strong> {teacher.address}
+            <strong>Address:</strong> {student.address}
           </p>
           <p className="card-text">
-            <strong>Phone:</strong> {teacher.phone}
+            <strong>Phone:</strong> {student.phone}
           </p>
         </div>
       </div>
@@ -46,4 +45,4 @@ const TeacherProfile = () => {
   );
 };
 
-export default TeacherProfile;
+export default StudentProfile;
