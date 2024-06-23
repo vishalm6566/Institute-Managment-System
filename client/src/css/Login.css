@@ -1,11 +1,9 @@
+
+
 .container {
-    margin-top: 50px;
+    padding-top: 50px; /* Adjust padding as needed */
 }
 
-h2 {
-    margin-bottom: 20px;
-}
-
-.btn-block {
-    margin-top: 20px;
+.text-center {
+    margin-bottom: 20px; /* Add margin below logo */
 }
