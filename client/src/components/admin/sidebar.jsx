@@ -28,7 +28,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/admin/dashboard" className="nav-link">
+                    <Link to="/admin/addtask" className="nav-link">
                         Task
                     </Link>
                 </li>
