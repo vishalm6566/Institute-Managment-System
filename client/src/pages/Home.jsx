@@ -1,26 +1,25 @@
-// Home.jsx
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import imsLogo from '../components/Images/instituteImage.jpg';
+import imsLogo from '../components/Images/1.avif';
 import AdmissionCard from '../components/Images/AdmissionCard.jpg';
 import CourseCard from '../components/Images/StudentCard.jpg';
 import StudentCard from '../components/Images/StudentCard.jpg';
 import NavBar from '../components/admin/Navbar';
 import Footer from '../components/admin/Footer';
+import '../css/Home.css';
 
 const Home = () => {
     return (
         <>
             <NavBar />
             <div className="container-fluid">
-                <header className="text-center my-5">
-                    <h1 className="display-4">Welcome to Institute Management System</h1>
+                <header className="text-center my-5 header-section">
+                    <h1 className="display-4 text-white">Welcome to Institute Management System</h1>
                 </header>
 
                 <div className="row mb-5">
                     <div className="col-md-12">
-                        <div className="card text-center">
+                        <div className="card text-center shadow-lg">
                             <Link to="/courses"><img src={imsLogo} className="card-img-top" alt="Institute Management" /></Link>
                         </div>
                     </div>
@@ -50,7 +49,7 @@ const Home = () => {
                     <h2 className="text-center mb-4">Services</h2>
                     <div className="row">
                         <div className="col-md-4">
-                            <div className="card text-center shadow">
+                            <div className="card text-center shadow-lg">
                                 <Link to="/courses"><img src={CourseCard} className="card-img-top" alt="Courses" /></Link>
                                 <div className="card-body">
                                     <h5 className="card-title">Courses</h5>
@@ -61,7 +60,7 @@ const Home = () => {
                         </div>
 
                         <div className="col-md-4">
-                            <div className="card text-center shadow">
+                            <div className="card text-center shadow-lg">
                                 <Link to="/admissions"><img src={AdmissionCard} className="card-img-top" alt="Admissions" /></Link>
                                 <div className="card-body">
                                     <h5 className="card-title">Admissions</h5>
@@ -72,7 +71,7 @@ const Home = () => {
                         </div>
 
                         <div className="col-md-4">
-                            <div className="card text-center shadow">
+                            <div className="card text-center shadow-lg">
                                 <Link to="/students"><img src={StudentCard} className="card-img-top" alt="Students" /></Link>
                                 <div className="card-body">
                                     <h5 className="card-title">Students</h5>

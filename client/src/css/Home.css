@@ -1,0 +1,22 @@
+.header-section {
+    /* background-image: url('../components/Images/1.avif'); Use a suitable image */
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+   background-color: black;
+   text-decoration: solid;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.header-section h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
