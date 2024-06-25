@@ -1,5 +1,5 @@
 import './App.css';
-import { Route,Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from './pages/Login';
@@ -23,6 +23,10 @@ import AddStudent from './components/admin/addStudent'
 import TaskInfo from './components/admin/allTask';
 import Attendance from './components/student/attendance';
 import Marks from './components/student/marks';
+import TeachProfile from './components/teacher/profile';
+import ShowTask from './components/teacher/showTask';
+import ShowStudent from './components/teacher/studentInfo';
+import ShowStudentProfile from './components/teacher/studentProfile'; 
 import AddTeacher from './components/admin/addteacher';
 
 function App() {
@@ -43,26 +47,34 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="admin" element={<Admin />} >
+          <Route path='dashboard' element={<Dashboard />} />
+          <Route path='teacherinfo' element={<TeacherInfo />} />
+          <Route path='addtask' element={<AddTask />} />
+          <Route path='alltask' element={<TaskInfo />} />
           <Route path='dashboard' element={<Dashboard/>} />
           <Route path='addteacher'element={<AddTeacher />}/>
           <Route path='teacherinfo' element={<TeacherInfo/>}/>
           <Route path='addtask' element={<AddTask/>}/>
           <Route path='alltask' element={<TaskInfo />}/>
           <Route path="teacher/:id" element={<TeacherProfile />} />
-          <Route path='studentinfo' element={<StudentInfo/>}/>
+          <Route path='studentinfo' element={<StudentInfo />} />
           <Route path='addstudent' element={<AddStudent />} />
           <Route path="student/:id" element={<StudentProfile />} />
-          <Route path='feedback' element={<Feedback/>} />
+          <Route path='feedback' element={<Feedback />} />
         </Route>
         <Route path="student" element={<Student />} >
-        <Route path='profile' element={<StdProfile/>} />
-        <Route path='feedback' element={<StudentFeedback/>} />
-        <Route path='marks' element={<Marks/>} />
-        <Route path='attendance' element={<Attendance/>} />
+          <Route path='profile' element={<StdProfile />} />
+          <Route path='feedback' element={<StudentFeedback />} />
+          <Route path='marks' element={<Marks />} />
+          <Route path='attendance' element={<Attendance />} />
         </Route>
         <Route path="teacher" element={<Teacher />} >
+        <Route path='profile' element={<TeachProfile />} />
+        <Route path='showtask' element={<ShowTask />} />
+        <Route path='student' element={<ShowStudent />} />
+        <Route path="student/:id" element={<ShowStudentProfile />} />
         </Route>
-        <Route path='*' element={<NotFound />}/>
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <ToastContainer />
     </div>
