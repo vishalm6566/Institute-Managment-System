@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import imsLogo from '../components/Images/1.avif';
+import college from '../components/Images/college.jpg';
 import AdmissionCard from '../components/Images/AdmissionCard.jpg';
 import CourseCard from '../components/Images/StudentCard.jpg';
 import StudentCard from '../components/Images/StudentCard.jpg';
@@ -13,18 +14,25 @@ const Home = () => {
         <>
             <NavBar />
             <div className="container-fluid">
-                <header className="text-center my-5 header-section">
-                    <h1 className="display-4 text-white">Welcome to Institute Management System</h1>
-                </header>
-
+                {/*<header className="text-center my-3 header-section">
+                    <h1 className="display-3 text-white">Welcome to Institute Management System</h1>
+                </header>*/}
+                
+                
                 <div className="row mb-5">
                     <div className="col-md-12">
                         <div className="card text-center shadow-lg">
-                            <Link to="/courses"><img src={imsLogo} className="card-img-top" alt="Institute Management" /></Link>
+                            <Link to="/courses" className="position-relative">
+                                <img src={imsLogo} className="card-img-top" alt="Institute Management" />
+                                <div className="overlay">
+                                    <div className="project-name ">
+                                       Institute Management System
+                                    </div>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
-
                 <section className="container">
                     <h2 className="text-center mb-4">Overview</h2>
                     <div className="row">
@@ -61,7 +69,7 @@ const Home = () => {
 
                         <div className="col-md-4">
                             <div className="card text-center shadow-lg">
-                                <Link to="/admissions"><img src={AdmissionCard} className="card-img-top" alt="Admissions" /></Link>
+                                <Link to="/admissions"><img src={CourseCard} className="card-img-top" alt="Admissions" /></Link>
                                 <div className="card-body">
                                     <h5 className="card-title">Admissions</h5>
                                     <p className="card-text">Manage student admissions here</p>
@@ -69,7 +77,7 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-
+                       
                         <div className="col-md-4">
                             <div className="card text-center shadow-lg">
                                 <Link to="/students"><img src={StudentCard} className="card-img-top" alt="Students" /></Link>
