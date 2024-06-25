@@ -21,6 +21,9 @@ import StudentFeedback from './components/student/feedback';
 import StdProfile from './components/student/profile';
 import AddStudent from './components/admin/addStudent'
 import TaskInfo from './components/admin/allTask';
+import Attendance from './components/student/attendance';
+import Marks from './components/student/marks';
+
 function App() {
 
   // eslint-disable-next-line
@@ -51,7 +54,9 @@ function App() {
         </Route>
         <Route path="student" element={<Student />} >
         <Route path='profile' element={<StdProfile/>} />
-          <Route path='feedback' element={<StudentFeedback/>} />
+        <Route path='feedback' element={<StudentFeedback/>} />
+        <Route path='marks' element={<Marks/>} />
+        <Route path='attendance' element={<Attendance/>} />
         </Route>
         <Route path="teacher" element={<Teacher />} >
         </Route>

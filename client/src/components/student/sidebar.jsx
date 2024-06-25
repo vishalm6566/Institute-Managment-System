@@ -22,6 +22,16 @@ const Sidebar = () => {
                         Feedback
                     </Link>
                 </li>
+                <li className="nav-item">
+                    <Link to="/student/marks" className="nav-link">
+                        Marks
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/student/attendance" className="nav-link">
+                        Attendance
+                    </Link>
+                </li>
             </ul>
             <hr />
             <div className="logout-section mt-auto">
