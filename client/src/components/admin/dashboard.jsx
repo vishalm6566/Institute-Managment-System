@@ -24,13 +24,13 @@ const cardData = [
     {
         title: 'Feedback',
         description: 'Generate and view reports.',
-        link: '/admin/dashboard',
+        link: '/admin/feedback',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyR10ZMAeHFI1lONQ_L1B1a0OrAnXqEYA7g7DR1mL68gUPDh0zpFiGd6KOZZ3mj5e15Q0&usqp=CAU'
     },
     {
         title: 'Task',
         description: 'Update system settings.',
-        link: '/admin/dashboard',
+        link: '/admin/alltask',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyR10ZMAeHFI1lONQ_L1B1a0OrAnXqEYA7g7DR1mL68gUPDh0zpFiGd6KOZZ3mj5e15Q0&usqp=CAU'
     },
 ];
@@ -41,7 +41,7 @@ const Dashboard = () => {
             <div className="row">
                 {cardData.map((card, index) => (
                     <div key={index} className="col-md-4 mb-4">
-                        <div className="card h-100">
+                        <div className="card h-40 border">
                             <img
                                 src={card.image}
                                 className="card-img-top"

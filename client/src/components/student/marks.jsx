@@ -27,13 +27,15 @@ const Marks = () => {
                 <thead>
                     <tr>
                         <th>Subject</th>
-                        <th>Marks</th>
+                        <th>Total Marks</th>
+                        <th>Obtained Marks</th>
                     </tr>
                 </thead>
                 <tbody>
                     {marksData.map((entry, index) => (
                         <tr key={index}>
                             <td>{entry.subject}</td>
+                            <td>100</td>
                             <td>{entry.marks}</td>
                         </tr>
                     ))}

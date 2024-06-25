@@ -56,7 +56,7 @@ const StudentProfile = () => {
                   <div className="card-body">
                     <img src={feedbackIcon} alt="Feedback Icon" className="mb-2" style={{ width: '50px', height: '50px' }} />
                     <br />
-                    <h5><Link to="/courses" className="card-title">Feedback</Link></h5>
+                    <h5><Link to="/student/feedback" className="card-title">Feedback</Link></h5>
                   </div>
                 </div>
               </div>
@@ -65,7 +65,7 @@ const StudentProfile = () => {
                   <div className="card-body">
                     <img src={marksIcon} alt="Marks Icon" className="mb-2" style={{ width: '50px', height: '50px' }} />
                     <br />
-                    <h5><Link to="/admissions" className="card-title">Marks</Link></h5>
+                    <h5><Link to="/student/marks" className="card-title">Marks</Link></h5>
                   </div>
                 </div>
               </div>
@@ -74,7 +74,7 @@ const StudentProfile = () => {
                   <div className="card-body">
                     <img src={attendanceIcon} alt="Attendance Icon" className="mb-2" style={{ width: '50px', height: '50px' }} />
                     <br />
-                   <h5><Link to="/students" className="card-title">Attendance</Link></h5> 
+                   <h5><Link to="/student/attendance" className="card-title">Attendance</Link></h5> 
                   </div>
                 </div>
               </div>
