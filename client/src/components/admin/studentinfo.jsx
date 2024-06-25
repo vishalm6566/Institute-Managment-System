@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 // import './StudentInfo.css';
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
+
 
 const StudentInfo = () => {
   const [students, setStudents] = useState([]);
@@ -40,6 +43,8 @@ const StudentInfo = () => {
   return (
     <div className="container mt-5">
       <h2>Student Information</h2>
+ 
+     <Link to="/admin/addstudent" className="btn btn-primary" >Add Student</Link>
       <table className="table table-responsive table-hover table-bordered mt-3">
         <thead className="thead-dark">
           <tr>

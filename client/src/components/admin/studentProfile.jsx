@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
 
+
 const StudentProfile = () => {
   const { id } = useParams();
   const { state } = useLocation();

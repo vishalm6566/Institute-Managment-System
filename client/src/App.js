@@ -19,7 +19,8 @@ import Student from './pages/Student';
 import Teacher from './pages/Teacher';
 import StudentFeedback from './components/student/feedback';
 import StdProfile from './components/student/profile';
-
+import AddStudent from './components/admin/addStudent'
+import TaskInfo from './components/admin/allTask';
 function App() {
 
   // eslint-disable-next-line
@@ -41,8 +42,10 @@ function App() {
           <Route path='dashboard' element={<Dashboard/>} />
           <Route path='teacherinfo' element={<TeacherInfo/>}/>
           <Route path='addtask' element={<AddTask/>}/>
+          <Route path='alltask' element={<TaskInfo />}/>
           <Route path="teacher/:id" element={<TeacherProfile />} />
           <Route path='studentinfo' element={<StudentInfo/>}/>
+          <Route path='addstudent' element={<AddStudent />} />
           <Route path="student/:id" element={<StudentProfile />} />
           <Route path='feedback' element={<Feedback/>} />
         </Route>
