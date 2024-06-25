@@ -1,5 +1,5 @@
 .header-section {
-    /* background-image: url('../components/Images/1.avif'); Use a suitable image */
+   
     background-size: cover;
     background-position: center;
     padding: 50px 0;
@@ -14,9 +14,51 @@
 }
 
 .card {
-    transition: transform 0.2s;
+    /*transition: transform 0.2s;*/
+    width: 100%;
+    border: none;
 }
 
-.card:hover {
-    transform: scale(1.05);
+.project-name {
+    position: absolute;
+    top: -10%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+   
+    color: white;
+    padding: 15px 30px; /* Increase padding for larger area */
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.6s ease-in-out; /* Smooth opacity transition */
 }
+
+/*.card:hover {
+    transform: scale(1.05);
+}*/
+.card:hover .project-name {
+    opacity: 1; /* Show on hover */
+}
+.position-relative {
+    position: relative;
+}
+.card-img-top{
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+   
+    transform: translate(-50%, -50%);
+   
+    color: white;
+    /*padding: 100px;*/
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    
+}
+

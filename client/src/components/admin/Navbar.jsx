@@ -8,10 +8,10 @@ import '../../css/custom-navbar.css';
 
 const NavBar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div className="container-fluid">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
+            <div className="container-fluid mainnavbar">
                 {/* Brand logo and name */}
-                <Link className="navbar-brand d-flex align-items-center" to="/">
+                <Link className="navbar-brand d-flex align-items-center profile-image" to="/">
                     <img src={IMSlogo} alt="Institute Logo" style={{ height: '40px', marginRight: '10px' }} />
                     <span className="fw-bold">IMS</span>
                 </Link>

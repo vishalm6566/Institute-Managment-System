@@ -8,3 +8,20 @@
     color: #fff; 
     background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background color on hover */
 }
+
+.mainnavbar{
+    max-width: 1400px;
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.navbar-brand img {
+    height: 40px;
+    width: 80px; /* Ensure it's a square to make it perfectly circular */
+    
+    margin-bottom: 0 px; /* Adjust as needed */
+}
