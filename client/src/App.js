@@ -19,6 +19,8 @@ import Student from './pages/Student';
 import Teacher from './pages/Teacher';
 import StudentFeedback from './components/student/feedback';
 import StdProfile from './components/student/profile';
+import Attendance from './components/student/attendance';
+import Marks from './components/student/marks';
 
 function App() {
 
@@ -48,7 +50,9 @@ function App() {
         </Route>
         <Route path="student" element={<Student />} >
         <Route path='profile' element={<StdProfile/>} />
-          <Route path='feedback' element={<StudentFeedback/>} />
+        <Route path='feedback' element={<StudentFeedback/>} />
+        <Route path='marks' element={<Marks/>} />
+        <Route path='attendance' element={<Attendance/>} />
         </Route>
         <Route path="teacher" element={<Teacher />} >
         </Route>
