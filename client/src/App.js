@@ -12,7 +12,7 @@ import TeacherProfile from './components/admin/teacherProfile'
 import Dashboard from './components/admin/dashboard'
 import NotFound from './components/404';
 import Home from './pages/Home'
-import ContactUs from './components/admin/conatctus';
+import ContactUs from './components/conatctus';
 import AddTask from './components/admin/addtask';
 import Feedback from './components/admin/feedback';
 import Student from './pages/Student';
@@ -23,6 +23,7 @@ import AddStudent from './components/admin/addStudent'
 import TaskInfo from './components/admin/allTask';
 import Attendance from './components/student/attendance';
 import Marks from './components/student/marks';
+import AddTeacher from './components/admin/addteacher';
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="admin" element={<Admin />} >
           <Route path='dashboard' element={<Dashboard/>} />
+          <Route path='addteacher'element={<AddTeacher />}/>
           <Route path='teacherinfo' element={<TeacherInfo/>}/>
           <Route path='addtask' element={<AddTask/>}/>
           <Route path='alltask' element={<TaskInfo />}/>
