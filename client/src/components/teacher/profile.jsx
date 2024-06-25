@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import feedbackIcon from "../../components/Images/feedback.png";
+import marksIcon from "../../components/Images/marks.png";
+import attendanceIcon from "../../components/Images/attendence.png";
 
 const TeacherProfile = () => {
   const [teacher, setTeacher] = useState(null);
@@ -57,7 +60,7 @@ const TeacherProfile = () => {
               <div className="col-md-4">
                 <div className="card text-center shadow">
                   <div className="card-body">
-                    <img src="" alt="Feedback Icon" className="mb-2" style={{ width: '50px', height: '50px' }} />
+                    <img src={feedbackIcon} alt="Feedback Icon" className="mb-2" style={{ width: '50px', height: '50px' }} />
                     <br />
                     <h5><Link to="/teacher/profile" className="card-title">profile</Link></h5>
                   </div>
@@ -66,7 +69,7 @@ const TeacherProfile = () => {
               <div className="col-md-4">
                 <div className="card text-center shadow">
                   <div className="card-body">
-                    <img src="" alt="Marks Icon" className="mb-2" style={{ width: '50px', height: '50px' }} />
+                    <img src={marksIcon} alt="Marks Icon" className="mb-2" style={{ width: '50px', height: '50px' }} />
                     <br />
                     <h5><Link to="/teacher/student" className="card-title">Student</Link></h5>
                   </div>
@@ -75,7 +78,7 @@ const TeacherProfile = () => {
               <div className="col-md-4">
                 <div className="card text-center shadow">
                   <div className="card-body">
-                    <img src="" alt="Attendance Icon" className="mb-2" style={{ width: '50px', height: '50px' }} />
+                    <img src={attendanceIcon} alt="Attendance Icon" className="mb-2" style={{ width: '50px', height: '50px' }} />
                     <br />
                    <h5><Link to="/teacher/showtask" className="card-title">Task</Link></h5> 
                   </div>
