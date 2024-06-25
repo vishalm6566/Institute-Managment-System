@@ -28,16 +28,16 @@ const NavBar = () => {
                             <Link className="nav-link" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/courses">Courses</Link>
-                        </li>
-                        <li className="nav-item">
                             <Link className="nav-link" to="/contactus">Contact Us</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/employees">Employees</Link>
+                            <Link className="nav-link" to="/admin/dashboard">Admin</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/students">Students</Link>
+                            <Link className="nav-link" to="/teacher/profile">Teacher</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/student/profile">Student</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/login">Login</Link>
