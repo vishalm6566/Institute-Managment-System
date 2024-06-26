@@ -2,15 +2,17 @@
 
 .navbar-nav .nav-link {
     color: #fff; 
+    overflow: hidden;
+
 }
 
 .navbar-nav .nav-link:hover {
     color: #fff; 
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background color on hover */
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .mainnavbar{
-    max-width: 1400px;
+    max-width: 1300px;
 }
 
 .navbar-brand {
@@ -21,7 +23,7 @@
 }
 .navbar-brand img {
     height: 40px;
-    width: 80px; /* Ensure it's a square to make it perfectly circular */
+    width: 80px; 
     
-    margin-bottom: 0 px; /* Adjust as needed */
+    margin-bottom: 0 px;
 }
