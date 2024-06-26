@@ -12,27 +12,24 @@ import '../css/Home.css';
 const Home = () => {
     return (
         <>
+            <div className="container-fluid p-0">
             <NavBar />
-            <div className="container-fluid">
                 {/*<header className="text-center my-3 header-section">
                     <h1 className="display-3 text-white">Welcome to Institute Management System</h1>
                 </header>*/}
-                
-                
-                <div className="row mb-5">
-                    <div className="col-md-12">
-                        <div className="card text-center shadow-lg">
-                            <Link to="/courses" className="position-relative">
-                                <img src={imsLogo} className="card-img-top" alt="Institute Management" />
-                                <div className="overlay">
-                                    <div className="project-name ">
-                                       Institute Management System
-                                    </div>
-                                </div>
-                            </Link>
+
+
+                <div className="">
+                    <div className="bg-image">
+                        <img src={imsLogo} alt="Institute Management" style={{width : "100%", height : "100vh"}}/>
+                        <div className="overlay">
+                            <div className="project-name">
+                                Institute Management System
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <section className="container">
                     <h2 className="text-center mb-4">Overview</h2>
                     <div className="row">
@@ -77,7 +74,7 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                       
+
                         <div className="col-md-4">
                             <div className="card text-center shadow-lg">
                                 <Link to="/students"><img src={StudentCard} className="card-img-top" alt="Students" /></Link>

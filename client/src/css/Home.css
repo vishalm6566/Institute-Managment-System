@@ -38,7 +38,7 @@
 /*.card:hover {
     transform: scale(1.05);
 }*/
-.card:hover .project-name {
+.project-name:hover {
     opacity: 1; /* Show on hover */
 }
 .position-relative {
