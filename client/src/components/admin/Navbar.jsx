@@ -16,7 +16,7 @@ const NavBar = () => {
                     <span className="fw-bold">IMS</span>
                 </Link>
 
-               {/* Navbar Toggler for responsive design*/}
+                {/* Navbar Toggler for responsive design*/}
                 {/*<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>*/}
@@ -31,16 +31,13 @@ const NavBar = () => {
                             <Link className="nav-link" to="/contactus">Contact Us</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/admin/dashboard">Admin</Link>
+                            <Link className="nav-link" to="/login" state={{role : "admin"}} >Admin</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/teacher/profile">Teacher</Link>
+                            <Link className="nav-link" to="/login"  state={{role : "teacher"}} >Teacher</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/student/profile">Student</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/login">Login</Link>
+                            <Link className="nav-link" to="/login"  state={{role : "student"}} >Student</Link>
                         </li>
                     </ul>
                 </div>

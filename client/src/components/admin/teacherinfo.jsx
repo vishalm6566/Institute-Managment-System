@@ -2,37 +2,17 @@ import React, { useState, useEffect } from "react";
 // import './TeacherInfo.css';
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { getAllTeachers } from "../../services/teacher";
 const TeacherInfo = () => {
   const navigate = useNavigate();
   const [teachers, setTeachers] = useState([]);
+  
+  const fetchData = async () => {
+    const response = await getAllTeachers();
+    setTeachers(response.data);
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      const data = [
-        {
-          id: 1,
-          name: "Gaurav Lodha",
-          email: "gaurav.lodha@example.com",
-          subject: "Mathematics",
-          address: "Pune",
-        },
-        {
-          id: 2,
-          name: "Rahul Kapoor",
-          email: "rahul.kapoor@example.com",
-          subject: "Science",
-          address: "Mumbai",
-        },
-        {
-          id: 3,
-          name: "Ashutosh Rane",
-          email: "ashutosh.rane@example.com",
-          subject: "History",
-          address: "Nashik",
-        },
-      ];
-      setTeachers(data);
-    };
     fetchData();
   }, []);
 
