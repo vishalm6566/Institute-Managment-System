@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { registerStudent } from '../../services/student';
 
-const AddStudent = ({ onAddStudent }) => {
+const AddStudent = (s) => {
   const [student, setStudent] = useState({
-    id: '',
     name: '',
     email: '',
-    phone: '',
+    password: '',
+    courseId : ''
   });
   const navigate = useNavigate();
 
@@ -20,25 +21,15 @@ const AddStudent = ({ onAddStudent }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddStudent(student);
-    setStudent({ id: '', name: '', email: '', phone: '' });
-    navigate('/admin/students');
+    console.log(student);
+    registerStudent(student);
+    setStudent({ name: '', email: '', password: ''});
+    navigate('/admin/studentinfo');
   };
 
   return (
     <div className="container mt-3">
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>ID</label>
-          <input
-            type="text"
-            className="form-control"
-            name="id"
-            value={student.id}
-            onChange={handleChange}
-            required
-          />
-        </div>
         <div className="form-group">
           <label>Name</label>
           <input
@@ -62,15 +53,24 @@ const AddStudent = ({ onAddStudent }) => {
           />
         </div>
         <div className="form-group">
-          <label>Phone</label>
+          <label>Password</label>
           <input
             type="text"
             className="form-control"
-            name="phone"
-            value={student.phone}
+            name="password"
+            value={student.password}
             onChange={handleChange}
             required
           />
+        </div>
+        <div className="form-group">
+        <label>Course</label>
+          <select className="form-select" aria-label="Default select example" name='courseId' onChange={handleChange}>
+            <option selected>select course</option>
+            <option value="1">DAC</option>
+            <option value="2">DMC</option>
+            <option value="3">DBDA</option>
+          </select>
         </div>
         <button type="submit" className="btn btn-primary mt-3">
           Add Student

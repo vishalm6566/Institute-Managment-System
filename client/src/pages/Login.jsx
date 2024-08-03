@@ -1,45 +1,49 @@
 import React, { useState } from 'react';
 import '../css/Login.css';
 import { toast } from 'react-toastify';
-import { Link, useNavigate } from 'react-router-dom';
-import IMSlogo from '../components/Images/IMSlogo.jpg'; 
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import IMSlogo from '../components/Images/IMSlogo.jpg';
+import { login } from '../services/user';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../redux/userSlice';
 
 
 
 const Login = () => {
+    const location = useLocation();
+    const { role } = location.state;
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!email || !password) {
-            toast.warn('Please fill in both fields.');
-            return;
+        if (email.length === 0) {
+            toast.warning('enter email')
+        } else if (password.length === 0) {
+            toast.warning('enter password')
         }
-        try {
-            const response = await fakeApiCall(email, password);
-            if (response.success) {
-                toast.success('Login successful!');
-                if (response.role === "admin") navigate('/admin/dashboard');
-            } else {
-                toast.error('Invalid email or password.');
-            }
-        } catch (err) {
-            toast.error('An error occurred. Please try again.');
-        }
-    };
+        else {
 
-    const fakeApiCall = (email, password) => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                if (email === 'admin@test.com' && password === 'admin') {
-                    resolve({ success: true, role: "admin" });
-                } else {
-                    resolve({ success: false });
+            try {
+                const response = await login(email, password, role);
+                if (response.status == 200) {
+                    toast.success('Login successful!');
+                    console.log(response);
+                    dispatch(setUser(response.data))
+                    navigate(`/${role}/profile`);
+
                 }
-            }, 1000);
-        });
+            } catch (err) {
+                console.log(err.response);
+                if (err.response.status == 401)
+                    toast.error('Invalid email or password.');
+                else toast.error('An error occurred. Please try again.');
+
+            }
+        }
     };
 
     return (

@@ -1,13 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import feedbackIcon from "../../components/Images/feedback.png";
 import marksIcon from "../../components/Images/marks.png";
 import attendanceIcon from "../../components/Images/attendence.png";
 import { useSelector } from "react-redux";
 
-const TeacherProfile = () => {
+const AdminProfile = () => {
+
   const user = useSelector((state) => state.user.user);
+  console.log(user);
   const [teacher, setTeacher] = useState(user);
+
+  // if (!teacher) {
+  //   return <p>Loading...</p>;
+  // }
 
   return (
     <div className="container mt-3">
@@ -39,12 +45,21 @@ const TeacherProfile = () => {
       <div className="row mt-1">
           <section className="container mt-5 mb-5">
             <div className="row">
+            <div className="col-md-4">
+                <div className="card text-center shadow">
+                  <div className="card-body">
+                    <img src={feedbackIcon} alt="Feedback Icon" className="mb-2" style={{ width: '50px', height: '50px' }} />
+                    <br />
+                    <h5><Link to="/admin/dashboard" className="card-title">Dashboard</Link></h5>
+                  </div>
+                </div>
+              </div>
               <div className="col-md-4">
                 <div className="card text-center shadow">
                   <div className="card-body">
                     <img src={feedbackIcon} alt="Feedback Icon" className="mb-2" style={{ width: '50px', height: '50px' }} />
                     <br />
-                    <h5><Link to="/teacher/profile" className="card-title">profile</Link></h5>
+                    <h5><Link to="/admin/profile" className="card-title">profile</Link></h5>
                   </div>
                 </div>
               </div>
@@ -53,7 +68,7 @@ const TeacherProfile = () => {
                   <div className="card-body">
                     <img src={marksIcon} alt="Marks Icon" className="mb-2" style={{ width: '50px', height: '50px' }} />
                     <br />
-                    <h5><Link to="/teacher/student" className="card-title">Student</Link></h5>
+                    <h5><Link to="/admin/studentinfo" className="card-title">Student</Link></h5>
                   </div>
                 </div>
               </div>
@@ -62,7 +77,16 @@ const TeacherProfile = () => {
                   <div className="card-body">
                     <img src={attendanceIcon} alt="Attendance Icon" className="mb-2" style={{ width: '50px', height: '50px' }} />
                     <br />
-                   <h5><Link to="/teacher/showtask" className="card-title">Task</Link></h5> 
+                   <h5><Link to="/admin/alltask" className="card-title">Task</Link></h5> 
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="card text-center shadow">
+                  <div className="card-body">
+                    <img src={attendanceIcon} alt="Attendance Icon" className="mb-2" style={{ width: '50px', height: '50px' }} />
+                    <br />
+                   <h5><Link to="/admin/teacherinfo" className="card-title">Teacher</Link></h5> 
                   </div>
                 </div>
               </div>
@@ -73,4 +97,4 @@ const TeacherProfile = () => {
   );
 };
 
-export default TeacherProfile;
+export default AdminProfile;

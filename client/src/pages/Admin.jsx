@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import Sidebar from '../components/admin/sidebar'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
+
 
 function Admin() {
+
   return (
     <div className="d-flex">
       <Sidebar />
@@ -21,4 +23,4 @@ function Admin() {
   )
 }
 
-export default Admin
+export default Admin;

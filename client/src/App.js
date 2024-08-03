@@ -7,6 +7,7 @@ import Register from './pages/Register';
 import Admin from './pages/Admin'
 import TeacherInfo from './components/admin/teacherinfo'
 import StudentInfo from './components/admin/studentinfo'
+import AdmProfile from './components/admin/profile'
 import StudentProfile from './components/admin/studentProfile'
 import TeacherProfile from './components/admin/teacherProfile'
 import Dashboard from './components/admin/dashboard'
@@ -26,7 +27,7 @@ import Marks from './components/student/marks';
 import TeachProfile from './components/teacher/profile';
 import ShowTask from './components/teacher/showTask';
 import ShowStudent from './components/teacher/studentInfo';
-import ShowStudentProfile from './components/teacher/studentProfile'; 
+import ShowStudentProfile from './components/teacher/studentProfile';
 import AddTeacher from './components/admin/addteacher';
 
 function App() {
@@ -47,15 +48,16 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="admin" element={<Admin />} >
+          <Route path='profile' element={<AdmProfile />} />
           <Route path='dashboard' element={<Dashboard />} />
           <Route path='teacherinfo' element={<TeacherInfo />} />
           <Route path='addtask' element={<AddTask />} />
           <Route path='alltask' element={<TaskInfo />} />
-          <Route path='dashboard' element={<Dashboard/>} />
-          <Route path='addteacher'element={<AddTeacher />}/>
-          <Route path='teacherinfo' element={<TeacherInfo/>}/>
-          <Route path='addtask' element={<AddTask/>}/>
-          <Route path='alltask' element={<TaskInfo />}/>
+          <Route path='dashboard' element={<Dashboard />} />
+          <Route path='addteacher' element={<AddTeacher />} />
+          <Route path='teacherinfo' element={<TeacherInfo />} />
+          <Route path='addtask' element={<AddTask />} />
+          <Route path='alltask' element={<TaskInfo />} />
           <Route path="teacher/:id" element={<TeacherProfile />} />
           <Route path='studentinfo' element={<StudentInfo />} />
           <Route path='addstudent' element={<AddStudent />} />
@@ -69,10 +71,10 @@ function App() {
           <Route path='attendance' element={<Attendance />} />
         </Route>
         <Route path="teacher" element={<Teacher />} >
-        <Route path='profile' element={<TeachProfile />} />
-        <Route path='showtask' element={<ShowTask />} />
-        <Route path='student' element={<ShowStudent />} />
-        <Route path="student/:id" element={<ShowStudentProfile />} />
+          <Route path='profile' element={<TeachProfile />} />
+          <Route path='showtask' element={<ShowTask />} />
+          <Route path='student' element={<ShowStudent />} />
+          <Route path="student/:id" element={<ShowStudentProfile />} />
         </Route>
         <Route path='*' element={<NotFound />} />
       </Routes>

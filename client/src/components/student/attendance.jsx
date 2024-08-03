@@ -4,9 +4,9 @@ const Attendance = () => {
     const [attendanceData, setAttendanceData] = useState([]);
 
     useEffect(() => {
-        // Mock attendance data (replace with actual API call)
+        
         const fetchAttendanceData = async () => {
-            // Simulating fetching data
+            
             const mockAttendance = [
                 { date: '2024-06-01', status: 'Present' ,name:"harshal shedge" },
                 { date: '2024-06-02', status: 'Absent' ,name:"harshal shedge" },
