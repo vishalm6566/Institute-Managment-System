@@ -34,14 +34,10 @@ const Sidebar = () => {
                         Student
                     </Link>
                 </li>
-                <li className="nav-item">
-                    <Link to="/admin/addtask" className="nav-link">
-                      Add  Task
-                    </Link>
-                </li>
+                
                 <li className="nav-item">
                     <Link to="/admin/alltask" className="nav-link">
-                      All Task
+                      Task
                     </Link>
                 </li>
                 <li className="nav-item">
