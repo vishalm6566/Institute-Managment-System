@@ -1,54 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { getAllTasks } from '../../services/taskService';
 
 const AllTask = () => {
   const [tasks, setTasks] = useState([]);
-  const navigate = useNavigate();
+
+  const fetchData = async () => {
+    const response = await getAllTasks();
+    console.log(response);
+    setTasks(response.data);
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      // Simulated data fetching (replace with actual API call)
-      const data = [
-        {
-          id: 1,
-          taskName: 'Complete Assignment',
-          description: 'Complete the assignment on React components.',
-          dueDate: '2024-07-05',
-          priority: 'High',
-          teacherName: 'John Doe',
-        },
-        {
-          id: 2,
-          taskName: 'Study for Exam',
-          description: 'Prepare for the upcoming exam on JavaScript.',
-          dueDate: '2024-07-10',
-          priority: 'Medium',
-          teacherName: 'Jane Smith',
-        },
-        {
-          id: 3,
-          taskName: 'Submit Project Proposal',
-          description: 'Submit the project proposal to the supervisor.',
-          dueDate: '2024-07-15',
-          priority: 'Low',
-          teacherName: 'Michael Johnson',
-        },
-      ];
-      setTasks(data);
-    };
     fetchData();
   }, []);
 
-  const showTaskDetails = (task) => {
-    navigate(`/admin/task/${task.id}`, { state: task });
-  };
+  // const showTaskDetails = (task) => {
+  //   navigate(`/admin/task/${task.id}`, { state: task });
+  // };
 
   return (
     <div className="container mt-5">
       <h2>Task Information</h2>
 
-      <Link to="/admin/addtask" className="btn btn-primary">
+      <Link to="/admin/teacherinfo" className="btn btn-primary">
         Add Task
       </Link>
 
@@ -56,28 +31,27 @@ const AllTask = () => {
         <thead className="thead-dark">
           <tr>
             <th scope="col">ID</th>
-            <th scope="col">Task Name</th>
             <th scope="col">Description</th>
+            <th scope="col">Assign Date</th>
             <th scope="col">Due Date</th>
-            <th scope="col">Priority</th>
             <th scope="col">Teacher's Name</th>
-            <th scope="col">Actions</th>
+            <th scope="col">Status</th>
           </tr>
         </thead>
         <tbody>
           {tasks.map((task) => (
             <tr key={task.id}>
               <th scope="row">{task.id}</th>
-              <td>{task.taskName}</td>
               <td>{task.description}</td>
+              <td>{task.createdOn}</td>
               <td>{task.dueDate}</td>
-              <td>{task.priority}</td>
-              <td>{task.teacherName}</td>
-              <td>
+              <td>{task.teacher.name}</td>
+              <td>{task.status}</td>
+              {/* <td>
                 <button className="btn btn-primary" onClick={() => showTaskDetails(task)}>
                   View Details
                 </button>
-              </td>
+              </td> */}
             </tr>
           ))}
         </tbody>

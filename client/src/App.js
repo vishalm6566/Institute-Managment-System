@@ -51,13 +51,11 @@ function App() {
           <Route path='profile' element={<AdmProfile />} />
           <Route path='dashboard' element={<Dashboard />} />
           <Route path='teacherinfo' element={<TeacherInfo />} />
-          <Route path='addtask' element={<AddTask />} />
+          <Route path='addtask/:id' element={<AddTask />} />
           <Route path='alltask' element={<TaskInfo />} />
           <Route path='dashboard' element={<Dashboard />} />
           <Route path='addteacher' element={<AddTeacher />} />
           <Route path='teacherinfo' element={<TeacherInfo />} />
-          <Route path='addtask' element={<AddTask />} />
-          <Route path='alltask' element={<TaskInfo />} />
           <Route path="teacher/:id" element={<TeacherProfile />} />
           <Route path='studentinfo' element={<StudentInfo />} />
           <Route path='addstudent' element={<AddStudent />} />

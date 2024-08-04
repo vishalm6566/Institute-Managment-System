@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { registerStudent } from '../../services/student';
+import { registerStudent } from '../../services/studentService';
 
 const AddStudent = (s) => {
   const [student, setStudent] = useState({
@@ -19,10 +19,10 @@ const AddStudent = (s) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(student);
-    registerStudent(student);
+    await registerStudent(student);
     setStudent({ name: '', email: '', password: ''});
     navigate('/admin/studentinfo');
   };

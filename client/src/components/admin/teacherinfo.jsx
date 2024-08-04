@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 // import './TeacherInfo.css';
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { getAllTeachers } from "../../services/teacher";
+import { getAllTeachers } from "../../services/teacherService";
 const TeacherInfo = () => {
   const navigate = useNavigate();
   const [teachers, setTeachers] = useState([]);
-  
+
   const fetchData = async () => {
     const response = await getAllTeachers();
     setTeachers(response.data);
@@ -25,7 +25,7 @@ const TeacherInfo = () => {
       <h2>Teacher Information</h2>
       <Link to="/admin/addteacher" className="btn btn-primary" >Add Teacher</Link>
       <table className="table table-hover table-bordered mt-3">
-      
+
         <thead className="thead-dark">
           <tr>
             <th scope="col">ID</th>
@@ -54,6 +54,11 @@ const TeacherInfo = () => {
                 >
                   view Profile
                 </button>
+                <Link to={`/admin/addtask/${teacher.id}`} state={teacher}
+                  className="btn btn-warning ms-2"
+                >
+                  Add Task
+                </Link>
               </td>
             </tr>
           ))}

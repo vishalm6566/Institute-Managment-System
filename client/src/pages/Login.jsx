@@ -3,7 +3,7 @@ import '../css/Login.css';
 import { toast } from 'react-toastify';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import IMSlogo from '../components/Images/IMSlogo.jpg';
-import { login } from '../services/user';
+import { login } from '../services/userService';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../redux/userSlice';
 
