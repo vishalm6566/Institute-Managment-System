@@ -1,6 +1,5 @@
-import React, { useContext, useState } from 'react'
 import Sidebar from '../components/admin/sidebar'
-import { Outlet, useLocation } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 
 function Admin() {
