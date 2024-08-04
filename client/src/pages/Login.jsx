@@ -29,7 +29,7 @@ const Login = () => {
 
             try {
                 const response = await login(email, password, role);
-                if (response.status == 200) {
+                if (response.status === 200) {
                     toast.success('Login successful!');
                     console.log(response);
                     dispatch(setUser(response.data))
@@ -38,7 +38,7 @@ const Login = () => {
                 }
             } catch (err) {
                 console.log(err.response);
-                if (err.response.status == 401)
+                if (err.response.status === 401)
                     toast.error('Invalid email or password.');
                 else toast.error('An error occurred. Please try again.');
 

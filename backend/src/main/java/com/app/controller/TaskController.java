@@ -3,6 +3,7 @@ package com.app.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.app.DTO.TaskReqByIdDTO;
 import com.app.DTO.TaskReqDTO;
 import com.app.entity.Task;
 import com.app.service.TaskService;
@@ -30,14 +31,18 @@ public class TaskController {
     public Task createTask(@RequestBody TaskReqDTO task) {
         return taskService.createTask(task);
     }
-
-    @PatchMapping("/{id}/status")
-    public Task updateTaskStatus(@PathVariable Long id, @RequestParam Task.Status status) {
-        return taskService.updateTaskStatus(id, status);
+    
+    @PostMapping("/teacher")
+    public List<Task> getTaskByTeacherId(@RequestBody TaskReqDTO task) {
+        return taskService.getTaskByTeacherId(task);
+    }
+    @PatchMapping("/{id}")
+    public Task updateTaskStatus(@PathVariable Long id) {
+        return taskService.updateTaskStatus(id);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteTask(@PathVariable Long id) {
-        taskService.deleteTask(id);
-    }
+//    @DeleteMapping("/{id}")
+//    public void deleteTask(@PathVariable Long id) {
+//        taskService.deleteTask(id);
+//    }
 }

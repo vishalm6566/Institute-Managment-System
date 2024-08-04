@@ -26,6 +26,12 @@ public class SubjectService {
     public List<Subject> getAllSubjects() {
         return subjectRepository.findAll();
     }
+    
+    public List<Subject> getAllSubjectsByCourse(Long id) {
+    	Course course = courseRepository.findById(id).orElseThrow();
+        return subjectRepository.findByCourse(course);
+    }
+    
 
     public Subject getSubjectById(Long id) {
         return subjectRepository.findById(id).orElse(null);

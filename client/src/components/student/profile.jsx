@@ -1,29 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import profile from "../../components/Images/Profile.png";
 import feedbackIcon from "../../components/Images/feedback.png";
 import marksIcon from "../../components/Images/marks.png";
 import attendanceIcon from "../../components/Images/attendence.png";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const StudentProfile = () => {
-  const [student, setStudent] = useState(null);
+  const user = useSelector((state) => state.user.user);
+  console.log(user);
+  const [student, setStudent] = useState(user);
 
-  useEffect(() => {
-    const fetchStudent = async () => {
-      setStudent({
-        id: 1,
-        name: "Nitin",
-        email: "nitin@gmail.com",
-        address: 'Pune',
-        phone: '+914567876547'
-      });
-    };
-    fetchStudent();
-  }, []);
-
-  if (!student) {
-    return <p>Loading...</p>;
-  }
+  // if (!student) {
+  //   return <p>Loading...</p>;
+  // }
 
   return (
     <div className="d-flex">
@@ -41,9 +31,12 @@ const StudentProfile = () => {
         </div>
         <div className="mt-4">
           <p><strong>ID:</strong> {student.id}</p>
+          <p><strong>Name:</strong> {student.name}</p>
           <p><strong>Email:</strong> {student.email}</p>
           <p><strong>Address:</strong> {student.address}</p>
           <p><strong>Phone:</strong> {student.phone}</p>
+          <p><strong>course:</strong> {student.course.name}</p>
+          <p><strong>course Dec:</strong> {student.course.description}</p>
         </div>
         <br />
         <br />

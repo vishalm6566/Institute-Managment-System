@@ -33,7 +33,7 @@ const Sidebar = () => {
             </ul>
             <hr />
             <div className="logout-section mt-auto">
-                <Link className="btn btn-danger" to={"/login"}>Logout</Link>
+                <Link className="btn btn-danger" to={"/home"}>Logout</Link>
             </div>
         </div>
     );

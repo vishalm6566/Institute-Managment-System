@@ -29,6 +29,8 @@ import ShowTask from './components/teacher/showTask';
 import ShowStudent from './components/teacher/studentInfo';
 import ShowStudentProfile from './components/teacher/studentProfile';
 import AddTeacher from './components/admin/addteacher';
+import CourseInfo from './components/admin/Course'
+import CourseDetails from './components/admin/CourseDetails';
 
 function App() {
 
@@ -58,6 +60,8 @@ function App() {
           <Route path='teacherinfo' element={<TeacherInfo />} />
           <Route path="teacher/:id" element={<TeacherProfile />} />
           <Route path='studentinfo' element={<StudentInfo />} />
+          <Route path='courseinfo' element={<CourseInfo />} />
+          <Route path="course/:id" element={<CourseDetails />} />
           <Route path='addstudent' element={<AddStudent />} />
           <Route path="student/:id" element={<StudentProfile />} />
           <Route path='feedback' element={<Feedback />} />

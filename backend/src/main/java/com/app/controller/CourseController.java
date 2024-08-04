@@ -9,6 +9,7 @@ import com.app.DTO.CourseReqDTO;
 import com.app.entity.Course;
 import com.app.service.CourseService;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/course")
 public class CourseController {

@@ -34,7 +34,11 @@ const Sidebar = () => {
                         Student
                     </Link>
                 </li>
-                
+                <li className="nav-item">
+                    <Link to="/admin/courseinfo" className="nav-link">
+                        Course
+                    </Link>
+                </li>
                 <li className="nav-item">
                     <Link to="/admin/alltask" className="nav-link">
                       Task
@@ -48,7 +52,7 @@ const Sidebar = () => {
             </ul>
             <hr />
             <div className="logout-section mt-auto">
-                <Link className="btn btn-danger" to={"/login"}>Logout</Link>
+                <Link className="btn btn-danger" to={"/home"}>Logout</Link>
             </div>
         </div>
     );
