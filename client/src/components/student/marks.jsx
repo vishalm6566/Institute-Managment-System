@@ -1,23 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { getAllMarksByStudentId } from '../../services/markService';
 
 const Marks = () => {
     const [marksData, setMarksData] = useState([]);
+    const user = useSelector((state) => state.user.user);
+    console.log(user);
+    const [student, setStudent] = useState(user);
 
     useEffect(() => {
-        // Mock marks data (replace with actual API call)
-        const fetchMarksData = async () => {
-            // Simulating fetching data
-            const mockMarks = [
-                { subject: 'Mathematics', marks: 85 },
-                { subject: 'Science', marks: 78 },
-                { subject: 'English', marks: 92 },
-                { subject: 'History', marks: 88 },
-                { subject: 'Geography', marks: 75 },
-            ];
-            setMarksData(mockMarks);
+
+        const fetchMarksData = async (studentId) => {
+            const response = await getAllMarksByStudentId(studentId);
+            setMarksData(response.data);
         };
 
-        fetchMarksData();
+        fetchMarksData(student.id);
     }, []);
 
     return (
@@ -27,6 +25,7 @@ const Marks = () => {
                 <thead>
                     <tr>
                         <th>Subject</th>
+                        <th>Course</th>
                         <th>Total Marks</th>
                         <th>Obtained Marks</th>
                     </tr>
@@ -34,7 +33,8 @@ const Marks = () => {
                 <tbody>
                     {marksData.map((entry, index) => (
                         <tr key={index}>
-                            <td>{entry.subject}</td>
+                            <td>{entry.subject.name}</td>
+                            <td>{entry.course.name}</td>
                             <td>100</td>
                             <td>{entry.marks}</td>
                         </tr>

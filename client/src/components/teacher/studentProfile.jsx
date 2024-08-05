@@ -1,50 +1,71 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import { getAllSubjects } from "../../services/subjectService";
+import { getAllMarksByStudentId, updateMarksByStdId } from "../../services/markService";
 
 const StudentProfile = () => {
   const { id } = useParams();
   const { state } = useLocation();
-  const [student, setStudent] = useState(null);
+  const [student, setStudent] = useState(state);
+  const [subjects, setSubjects] = useState([]);
+  const [DBMarks, setDBMarks] = useState([]);
   const [updatedMarks, setUpdatedMarks] = useState({});
+  
+  const fetchMarks = async (studentId) => {
+    try {
+      const response = await getAllMarksByStudentId(studentId);
+      setDBMarks(response.data);
 
+    } catch (error) {
+      console.log(error);
+    }
+  }
   useEffect(() => {
-    const fetchStudent = async () => {
-      setStudent({
-        ...state,
-        subjects: [
-          { name: 'Mathematics', marks: 80 },
-          { name: 'Science', marks: 85 },
-          { name: 'History', marks: 90 },
-        ],
-      });
-
+    const fetchSubjects = async (courseId) => {
+      const response = await getAllSubjects(courseId);
+      console.log(response.data);
+      setSubjects(response.data);
       const initialMarks = {};
-      state.subjects?.forEach((subject) => {
-        initialMarks[subject.name] = subject.marks;
+      subjects.forEach((subject) => {
+        // initialMarks[subject.name] = subject.marks || 0;
+        initialMarks[subject.name] = 0;
       });
       setUpdatedMarks(initialMarks);
     };
 
-    fetchStudent();
-  }, [id, state]);
+
+    fetchSubjects(student.course.id);
+    fetchMarks(student.id);
+  }, []);
 
   const handleMarksChange = (subjectName, value) => {
     setUpdatedMarks((prevMarks) => ({
       ...prevMarks,
       [subjectName]: Number(value),
     }));
+    console.log(updatedMarks);
   };
 
   const handleMarksSubmit = async (e) => {
     e.preventDefault();
-    console.log(`Updated marks for student ${id}:`, updatedMarks);
-    toast.success('Marks updated successfully!....');
+    subjects.forEach(async (subject) => {
+      if (updatedMarks[subject.name]) {
+      }
+      const response = await updateMarksByStdId({
+        subjectId: subject.id,
+        courseId: subject.course.id,
+        studentId: student.id,
+        marks: updatedMarks[subject.name],
+      });
+    });
+    fetchMarks(student.id);
+    toast.success("Marks updated successfully!....");
   };
 
-  if (!student) {
-    return <p>Loading...</p>;
-  }
+  // if (!student) {
+  //   return <p>Loading...</p>;
+  // }
 
   return (
     <div className="container mt-3">
@@ -59,16 +80,19 @@ const StudentProfile = () => {
         <div className="card-body">
           {/* <h3 className="card-title">{student.name}</h3> */}
           <p className="card-text">
-            <strong>Email:</strong> {student.email}
+            <strong>ID:</strong> {student.id}
           </p>
           <p className="card-text">
-            <strong>ID:</strong> {student.id}
+            <strong>Email:</strong> {student.email}
           </p>
           <p className="card-text">
             <strong>Address:</strong> {student.address}
           </p>
           <p className="card-text">
             <strong>Phone:</strong> {student.phone}
+          </p>
+          <p className="card-text">
+            <strong>Course:</strong> {student.course.name}
           </p>
           <hr />
           <form onSubmit={handleMarksSubmit}>
@@ -78,16 +102,14 @@ const StudentProfile = () => {
                 <tr>
                   <th scope="col">Subject</th>
                   <th scope="col">Total Marks</th>
-                  <th scope="col">Current Marks</th>
                   <th scope="col">New Marks</th>
                 </tr>
               </thead>
               <tbody>
-                {student.subjects.map((subject) => (
+                {subjects.map((subject) => (
                   <tr key={subject.name}>
                     <td>{subject.name}</td>
                     <td>100</td>
-                    <td>{subject.marks}</td>
                     <td>
                       <input
                         type="number"
@@ -107,6 +129,30 @@ const StudentProfile = () => {
               Update Marks
             </button>
           </form>
+        </div>
+        <br />
+        <hr />
+        <br />
+        <div>
+          <table className="table table-responsive table-hover table-bordered mt-3">
+            <thead className="thead-dark">
+              <tr>
+                <th scope="col">Subject</th>
+                <th scope="col">Total Marks</th>
+                <th scope="col">Current Marks</th>
+              </tr>
+            </thead>
+            <tbody>
+              {DBMarks.length != 0 &&
+                DBMarks.map((mark) => (
+                  <tr key={mark.id}>
+                    <td>{mark.subject.name}</td>
+                    <td>100</td>
+                    <td>{mark.marks}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
