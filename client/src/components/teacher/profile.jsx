@@ -23,10 +23,10 @@ const TeacherProfile = () => {
       <div className="mt-4">
         <h3>{teacher.name}</h3>
         <p>
-          <strong>Email:</strong> {teacher.email}
+          <strong>ID:</strong> {teacher.id}
         </p>
         <p>
-          <strong>ID:</strong> {teacher.id}
+          <strong>Email:</strong> {teacher.email}
         </p>
         <p>
           <strong>Address:</strong> {teacher.address}

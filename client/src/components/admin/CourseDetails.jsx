@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { getAllSubjects } from "../../services/subject";
+import { getAllSubjects } from "../../services/subjectService";
 
 const CourseDetails = () => {
   const { state: course } = useLocation();

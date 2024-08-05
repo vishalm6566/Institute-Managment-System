@@ -3,7 +3,6 @@ package com.app.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.app.DTO.TaskReqByIdDTO;
 import com.app.DTO.TaskReqDTO;
 import com.app.entity.Task;
 import com.app.service.TaskService;
