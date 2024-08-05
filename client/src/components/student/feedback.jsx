@@ -1,19 +1,27 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import '../../css/feedback.css';
+import { useSelector } from 'react-redux';
+import { createFeedback } from '../../services/feedbackService';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 const StudentFeedback = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [feedback, setFeedback] = useState('');
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        toast.success('Thank you for your feedback!');
-        setName('');
-        setEmail('');
-        setFeedback('');
-    };
+    const user = useSelector((state) => state.user.user);
+    console.log(user);
+    const [student, setStudent] = useState(user);
+    const [name, setName] = useState(user.name);
+    const [email, setEmail] = useState(user.email);
+    const [message, setmessage] = useState('');
+    const navigate = useNavigate();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await createFeedback(student.id,message);
+        setmessage('');
+        toast.success('feedback added successfully!');
+        navigate('/student/profile')
+    
+        
+      };
 
     return (
         <div className="container mt-5">
@@ -29,6 +37,7 @@ const StudentFeedback = () => {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
+                        readOnly
                     />
                 </div>
                 <div className="form-group p-1">
@@ -41,6 +50,7 @@ const StudentFeedback = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
+                        readOnly
                     />
                 </div>
                 <div className="form-group p-1">
@@ -50,8 +60,8 @@ const StudentFeedback = () => {
                         id="feedback"
                         rows="4"
                         placeholder="Enter your feedback"
-                        value={feedback}
-                        onChange={(e) => setFeedback(e.target.value)}
+                        value={message}
+                        onChange={(e) => setmessage(e.target.value)}
                         required
                     ></textarea>
                 </div>

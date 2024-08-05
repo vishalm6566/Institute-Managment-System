@@ -1,35 +1,17 @@
 import React, { useState, useEffect } from "react";
-
+import { getAllFeedback } from "../../services/feedbackService";
 const AdminFeedback = () => {
   const [feedbackList, setFeedbackList] = useState([]);
 
+  
   useEffect(() => {
-    const fetchFeedback = async () => {
-      const data = [
-        {
-          id: 1,
-          studentName: "Vikram Singh",
-          feedback: "Great course!",
-          date: "2024-06-15",
-        },
-        {
-          id: 2,
-          studentName: "Priya Patel",
-          feedback: "The instructor was very helpful.",
-          date: "2024-06-14",
-        },
-        {
-          id: 3,
-          studentName: "Arjun Mehta",
-          feedback: "The assignments were challenging but rewarding.",
-          date: "2024-06-13",
-        },
-      ];
-      setFeedbackList(data);
+    const fetchData = async () => {
+      const response = await getAllFeedback();
+      console.log(response.data);
+      setFeedbackList(response.data);
     };
-    fetchFeedback();
+    fetchData();
   }, []);
-
   return (
     <div className="container mt-5">
       <h2>Student Feedback</h2>
@@ -46,9 +28,9 @@ const AdminFeedback = () => {
           {feedbackList.map((feedback) => (
             <tr key={feedback.id}>
               <th scope="row">{feedback.id}</th>
-              <td>{feedback.studentName}</td>
-              <td>{feedback.feedback}</td>
-              <td>{feedback.date}</td>
+              <td>{feedback.student.name}</td>
+              <td>{feedback.message}</td>
+              <td>{feedback.createdOn}</td>
             </tr>
           ))}
         </tbody>
