@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import { getAllSubjects } from "../../services/subjectService";
 import { getAllMarksByStudentId, updateMarksByStdId } from "../../services/markService";
 
 const StudentProfile = () => {
-  const { id } = useParams();
   const { state } = useLocation();
   const [student, setStudent] = useState(state);
   const [subjects, setSubjects] = useState([]);
@@ -28,15 +27,17 @@ const StudentProfile = () => {
       setSubjects(response.data);
       const initialMarks = {};
       subjects.forEach((subject) => {
-        // initialMarks[subject.name] = subject.marks || 0;
-        initialMarks[subject.name] = 0;
+        initialMarks[subject.name] = subject.marks;
+        // initialMarks[subject.name] = 0;
       });
       setUpdatedMarks(initialMarks);
+      console.log("fisrt")
+      console.log(updatedMarks);
     };
 
 
-    fetchSubjects(student.course.id);
     fetchMarks(student.id);
+    fetchSubjects(student.course.id);
   }, []);
 
   const handleMarksChange = (subjectName, value) => {
@@ -107,7 +108,7 @@ const StudentProfile = () => {
               </thead>
               <tbody>
                 {subjects.map((subject) => (
-                  <tr key={subject.name}>
+                  <tr key={subject.id}>
                     <td>{subject.name}</td>
                     <td>100</td>
                     <td>
