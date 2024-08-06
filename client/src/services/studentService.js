@@ -27,3 +27,12 @@ export async function getAllStudents() {
     return response
 }
 
+export async function updateStudent(body) {
+       
+
+    const response = await axios.patch(`${config.url}/student/update`, body)
+
+    // read JSON data (response)
+    console.log(response)
+    return response
+}

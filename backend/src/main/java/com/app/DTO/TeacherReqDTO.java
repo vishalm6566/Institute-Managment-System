@@ -13,9 +13,12 @@ import lombok.ToString;
 @ToString
 
 public class TeacherReqDTO {
-
-    private Long id;
-    private String name;
-    private String email;
-    private String password;
+	    private Long id;
+	    private String name;
+	    private String lastName;
+	    private String email;
+	    private String password;
+	    private String address;
+	    private String phone;
+    
 }

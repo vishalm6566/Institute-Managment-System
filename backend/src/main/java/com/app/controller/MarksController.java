@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.app.DTO.MarkResDTO;
 import com.app.DTO.MarksReqDTO;
 import com.app.entity.Marks;
 import com.app.service.MarksService;

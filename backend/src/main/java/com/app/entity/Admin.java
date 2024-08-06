@@ -5,19 +5,10 @@ import lombok.*;
 
 import java.util.Set;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-@ToString
+@Data
 @Entity
-public class Admin extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String email;
-    private String password;	
+public class Admin extends BasePersonEntity {
+	
 }
 
 

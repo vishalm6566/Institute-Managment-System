@@ -36,6 +36,11 @@ const Sidebar = () => {
                         Attendance
                     </Link>
                 </li>
+                <li className="nav-item">
+                    <Link to="/student/update" className="nav-link">
+                        Update Info
+                    </Link>
+                </li>
             </ul>
             <hr />
             <div className="logout-section mt-auto">

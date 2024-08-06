@@ -27,14 +27,11 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-public class Student extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String email;
-    private String password;
+public class Student extends BasePersonEntity {
 
+	private int marks10th;
+    private int marks12th;
+    private int graduationMarks;
     @ManyToOne
     @JoinColumn(name = "course_id")
     private Course course;

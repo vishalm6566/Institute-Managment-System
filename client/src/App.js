@@ -31,7 +31,7 @@ import ShowStudentProfile from './components/teacher/studentProfile';
 import AddTeacher from './components/admin/addteacher';
 import CourseInfo from './components/admin/Course'
 import CourseDetails from './components/admin/CourseDetails';
-
+import UpdateStudent from './components/student/update';
 function App() {
 
   // eslint-disable-next-line
@@ -71,6 +71,7 @@ function App() {
           <Route path='feedback' element={<StudentFeedback />} />
           <Route path='marks' element={<Marks />} />
           <Route path='attendance' element={<Attendance />} />
+          <Route path='update' element={<UpdateStudent />} />
         </Route>
         <Route path="teacher" element={<Teacher />} >
           <Route path='profile' element={<TeachProfile />} />
