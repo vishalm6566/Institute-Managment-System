@@ -30,13 +30,26 @@ const StudentProfile = () => {
           <hr />
         </div>
         <div className="mt-4">
-          <p><strong>ID:</strong> {student.id}</p>
-          <p><strong>Name:</strong> {student.name}</p>
-          <p><strong>Email:</strong> {student.email}</p>
-          <p><strong>Address:</strong> {student.address}</p>
-          <p><strong>Phone:</strong> {student.phone}</p>
-          <p><strong>course:</strong> {student.course.name}</p>
-          <p><strong>course Dec:</strong> {student.course.description}</p>
+          <p><strong>ID :</strong> {student.id}</p>
+          <p><strong>FirstName :</strong> {student.name}</p>
+          <p><strong>LastName :</strong> {student.lastName}</p>
+          <p><strong>Email :</strong> {student.email}</p>
+          <p><strong>Course :</strong> {student.course.name}</p>
+          
+        </div>
+        <br />
+        <br />
+        <hr />
+        <div className="fw-bold">
+          Other Information
+        </div>
+        <div className="mt-4">
+        <p><strong>Address :</strong> {student.address}</p>
+        <p><strong>Phone :</strong> {student.phone}</p>
+        <p><strong>Course Dec :</strong> {student.course.description}</p>
+        <p><strong>10 <sup>th</sup> Marks : </strong> {student.marks10th}</p>
+        <p><strong>12 <sup>th</sup> Marks : </strong> {student.marks12th}</p>
+        <p><strong>Graduation Marks : </strong> {student.graduationMarks}</p>
         </div>
         <br />
         <br />

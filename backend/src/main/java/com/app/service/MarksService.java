@@ -10,7 +10,6 @@ import com.app.DAO.CourseRepository;
 import com.app.DAO.MarksRepository;
 import com.app.DAO.StudentRepository;
 import com.app.DAO.SubjectRepository;
-import com.app.DTO.MarkResDTO;
 import com.app.DTO.MarksReqDTO;
 import com.app.entity.Course;
 import com.app.entity.Marks;

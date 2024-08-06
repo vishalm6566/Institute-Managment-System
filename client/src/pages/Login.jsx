@@ -38,7 +38,7 @@ const Login = () => {
                 }
             } catch (err) {
                 console.log(err.response);
-                if (err.response.status === 401)
+                if (err.response && err.response.status === 401)
                     toast.error('Invalid email or password.');
                 else toast.error('An error occurred. Please try again.');
 

@@ -11,9 +11,7 @@ import lombok.Data;
 @Data
 @Entity
 public class Task extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
 
 //    @ManyToOne
 //    @JoinColumn(name = "admin_id")

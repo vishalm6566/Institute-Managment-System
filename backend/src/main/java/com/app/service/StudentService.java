@@ -47,4 +47,12 @@ public class StudentService {
     public void deleteStudent(Long id) {
         studentRepository.deleteById(id);
     }
+
+	public Student updateStudent(StudentReqDTO student) {
+    	Student std = studentRepository.findById(student.getId()).orElseThrow();
+    	mapper.map(student, std);
+    	studentRepository.save(std);
+		
+		return std;
+	}
 }

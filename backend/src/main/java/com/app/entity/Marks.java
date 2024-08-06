@@ -21,9 +21,6 @@ import lombok.ToString;
 @ToString
 @Entity
 public class Marks extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "student_id")

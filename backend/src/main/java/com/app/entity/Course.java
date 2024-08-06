@@ -20,9 +20,7 @@ import lombok.ToString;
 @ToString
 @Entity
 public class Course extends BaseEntity{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
     private String name;
     private String description;
 
