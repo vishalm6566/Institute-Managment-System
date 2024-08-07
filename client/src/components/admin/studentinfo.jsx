@@ -23,11 +23,11 @@ const StudentInfo = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt">
       <h2>Student Information</h2>
  
      <Link to="/admin/addstudent" className="btn btn-primary" >Add Student</Link>
-      <table className="table table-responsive table-hover table-bordered mt-3">
+      <table className="table table-responsive table-hover table-striped table-bordered mt-3">
         <thead className="thead-dark">
           <tr>
             <th scope="col">ID</th>

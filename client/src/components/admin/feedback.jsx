@@ -13,9 +13,9 @@ const AdminFeedback = () => {
     fetchData();
   }, []);
   return (
-    <div className="container mt-5">
+    <div className="container mt">
       <h2>Student Feedback</h2>
-      <table className="table table-hover table-bordered mt-3">
+      <table className="table table-hover table-striped table-bordered mt-3">
         <thead className="thead-dark">
           <tr>
             <th scope="col">ID</th>

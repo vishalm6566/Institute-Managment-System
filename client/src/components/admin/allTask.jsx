@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { getAllTasks } from '../../services/taskService';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { getAllTasks } from "../../services/taskService";
 
 const AllTask = () => {
   const [tasks, setTasks] = useState([]);
@@ -20,14 +20,14 @@ const AllTask = () => {
   // };
 
   return (
-    <div className="container mt-5">
+    <div className="container">
       <h2>Task Information</h2>
 
       <Link to="/admin/teacherinfo" className="btn btn-primary">
         Add Task
       </Link>
 
-      <table className="table table-responsive table-hover table-bordered mt-3">
+      <table className="table table-responsive table-hover table-bordered table-striped mt-3" >
         <thead className="thead-dark">
           <tr>
             <th scope="col">ID</th>
@@ -46,7 +46,13 @@ const AllTask = () => {
               <td>{task.createdOn}</td>
               <td>{task.dueDate}</td>
               <td>{task.teacher.name}</td>
-              <td>{task.status}</td>
+              <td
+                style={{
+                  color: task.status == "PENDING" ? "orange" : "green",
+                }}
+              >
+                {task.status}
+              </td>
               {/* <td>
                 <button className="btn btn-primary" onClick={() => showTaskDetails(task)}>
                   View Details
