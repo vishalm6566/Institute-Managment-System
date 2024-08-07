@@ -17,17 +17,17 @@ const Sidebar = () => {
             <ul className="nav nav-pills flex-column mb-auto">
                 <li className="nav-item">
                     <Link to="/teacher/profile" className="nav-link">
-                        Profile
+                       <b>Profile</b> 
                     </Link>
                 </li>
                 <li className="nav-item">
                     <Link to="/teacher/showtask" className="nav-link">
-                        Task
+                       <b>Task</b> 
                     </Link>
                 </li>
                 <li className="nav-item">
                     <Link to="/teacher/student" className="nav-link">
-                        Student
+                       <b>Student</b> 
                     </Link>
                 </li>
             </ul>

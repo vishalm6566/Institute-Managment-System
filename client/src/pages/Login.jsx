@@ -6,6 +6,8 @@ import IMSlogo from '../components/Images/IMSlogo.jpg';
 import { login } from '../services/userService';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../redux/userSlice';
+import NavBar from '../components/admin/Navbar';
+import Footer from '../components/admin/Footer';
 
 
 
@@ -47,42 +49,47 @@ const Login = () => {
     };
 
     return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-4 border shadow p-3 mb-5 bg-white rounded">
-                    <div className="text-center mb-4">
-                        <img src={IMSlogo} alt="IMS Logo" style={{ height: '80px' }} />
-                        <h2>Login</h2>
+        <div>
+            <NavBar />
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className="col-md-4 border shadow p-3 mb-5 bg-white rounded">
+                        <div className="text-center mb-4">
+                            <img src={IMSlogo} alt="IMS Logo" style={{ height: '80px' }} />
+                            <h2>Login</h2>
+                        </div>
+                        <form onSubmit={handleSubmit}>
+                            <div className="form-group">
+                                <label htmlFor="email">Email address</label>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    id="email"
+                                    placeholder="Enter email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="password">Password</label>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    id="password"
+                                    placeholder="Password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
+                            </div>
+                            <div>Don't have an account? <Link to="/register">Register</Link></div>
+                            <button type="submit" className="btn btn-primary btn-block mt-3">Login</button>
+                        </form>
                     </div>
-                    <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label htmlFor="email">Email address</label>
-                            <input
-                                type="email"
-                                className="form-control"
-                                id="email"
-                                placeholder="Enter email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="password">Password</label>
-                            <input
-                                type="password"
-                                className="form-control"
-                                id="password"
-                                placeholder="Password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                        </div>
-                        <div>Don't have an account? <Link to="/register">Register</Link></div>
-                        <button type="submit" className="btn btn-primary btn-block mt-3">Login</button>
-                    </form>
                 </div>
             </div>
+            <Footer />
         </div>
+
     );
 };
 

@@ -6,10 +6,10 @@ function Teacher() {
   return (
     <div className="d-flex">
       <Sidebar />
-      <div className="container-fluid p-2" style={{ marginLeft: "250px" }}>
+      <div className="container-fluid p-2" style={{ marginLeft: "250px", backgroundColor : "#f5f7fa", minHeight : "100vh" }}>
         <h2
           className="border p-3 bg-light rounded"
-          style={{ textAlign: "center" }}
+          style={{ textAlign: "center", color :"white", backgroundImage: "linear-gradient(to bottom right ,white,black)"}}
         >
           Institute Managment System
         </h2>
