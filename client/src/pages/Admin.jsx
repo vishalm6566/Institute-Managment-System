@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Sidebar from "../components/admin/sidebar";
 import { Outlet, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
+import Sidebar from '../components/admin/sidebar'
 
 function Admin() {
   const user = useSelector((state) => state.user.user);
@@ -18,13 +19,24 @@ function Admin() {
     func();
   });
 
+  const user = useSelector((state) => state.user.user);
+  const navigate = useNavigate()
+  console.log(user);
+  const [admin, setAdmin] = useState(user);
+
+if(admin==null){
+  toast.warn("Login into app")
+}
+  
+
   return (
     <div className="d-flex">
       {user && <Sidebar />}
       <div className="container-fluid p-2" style={{ marginLeft: "250px" }}>
         <h2
           className="border p-3 bg-light rounded"
-          style={{ textAlign: "center" }}
+          style={{ textAlign: "center", color :"white", backgroundImage: "linear-gradient(to bottom right ,white,black)"
+          }}
         >
           Institute Managment System
         </h2>

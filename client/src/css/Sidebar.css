@@ -4,39 +4,38 @@
     position: fixed;
     top: 0;
     left: 0;
-    overflow-y: auto;
-    background-color: #f8f9fa;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #4f7182;
+    padding-top: 20px;
+    background-image: linear-gradient(to bottom right ,#ffcccc,#ffc299);
 }
 
 .profile-section {
     text-align: center;
 }
 
-.profile-img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+.profile-container {
+    margin-left: 250px;
+   
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    min-height: 100vh;
 }
 
 .nav-link {
-    color: #000;
-    padding: 10px 15px;
-    border-radius: 5px;
-    margin: 5px 0;
-    transition: background-color 0.3s ease;
+    color: #333;
+    font-size: 16px;
+    padding: 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
 }
 
 .nav-link:hover {
     background-color: #e9ecef;
-}
-
-.nav-link.active {
-    background-color: #007bff;
-    color: #fff;
+    color: #007bff;
 }
 
 .logout-section {
     text-align: center;
-    padding: 20px;
 }

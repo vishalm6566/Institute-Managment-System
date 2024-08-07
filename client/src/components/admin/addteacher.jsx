@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { registerTeacher } from "../../services/teacherService";
 import { getAllSubject } from "../../services/subjectService";
+import { registerTeacher } from '../../services/teacherService';
+import { toast } from "react-toastify";
 
 const AddTeacher = () => {
   const [teacher, setTeacher] = useState({
@@ -41,7 +43,8 @@ const AddTeacher = () => {
     console.log(teacher);
     await registerTeacher(teacher);
     setTeacher({ name: "", email: "", password: "", address : "", phone : "",  });
-    navigate("/admin/teacherinfo");
+    toast.success("Teacher Added Successfully")
+    navigate('/admin/teacherinfo');
   };
 
   return (
