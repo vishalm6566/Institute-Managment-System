@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { registerTeacher } from '../../services/teacherService';
+import { toast } from "react-toastify";
+
 
 const AddTeacher = () => {
   const [teacher, setTeacher] = useState({
@@ -22,6 +24,7 @@ const AddTeacher = () => {
     e.preventDefault();
     await registerTeacher(teacher);
     setTeacher({  name: '', email: '', password: '' });
+    toast.success("Teacher Added Successfully")
     navigate('/admin/teacherinfo');
   };
 

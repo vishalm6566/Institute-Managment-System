@@ -18,3 +18,4 @@ public class BasePersonEntity extends BaseEntity{
     private String address;
     private String phone;
 }
+
