@@ -9,3 +9,12 @@ export async function getAllSubjects(courseId) {
     console.log(response)
     return response
 }
+
+export async function getAllSubject() {
+
+    const response = await axios.get(`${config.url}/subject`)
+
+    // read JSON data (response)
+    console.log(response)
+    return response
+}

@@ -21,17 +21,19 @@ const TeacherInfo = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt">
       <h2>Teacher Information</h2>
       <Link to="/admin/addteacher" className="btn btn-primary" >Add Teacher</Link>
-      <table className="table table-hover table-bordered mt-3">
+      <table className="table table-hover table-bordered table-striped mt-3">
 
         <thead className="thead-dark">
           <tr>
             <th scope="col">ID</th>
-            <th scope="col">Name</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
             <th scope="col">Email</th>
             <th scope="col">Subject</th>
+            <th scope="col">Phone</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
@@ -40,8 +42,10 @@ const TeacherInfo = () => {
             <tr key={teacher.id}>
               <th scope="row">{teacher.id}</th>
               <td>{teacher.name}</td>
+              <td>{teacher.lastName}</td>
               <td>{teacher.email}</td>
-              <td>{teacher.subject}</td>
+              <td>{teacher.subject == null ? "" : teacher.subject.name}</td>
+              <td>{teacher.phone}</td>
               <td>
                 {/* <Link to={`/admin/teacher/${teacher.id}`} className="btn btn-primary">
                                     View Profile
