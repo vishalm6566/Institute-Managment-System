@@ -24,7 +24,8 @@ function Student() {
       <div className="container-fluid p-2" style={{ marginLeft: "250px" }}>
         <h2
           className="border p-3 bg-light rounded"
-          style={{ textAlign: "center" }}
+          style={{ textAlign: "center", color :"white", backgroundImage: "linear-gradient(to bottom right ,white,black)"
+          }}
         >
           Institute Managment System
         </h2>
