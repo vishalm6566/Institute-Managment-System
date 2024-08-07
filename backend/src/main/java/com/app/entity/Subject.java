@@ -21,5 +21,8 @@ public class Subject extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "course_id")
     private Course course;
+    
+//    @OneToOne(mappedBy = "teacher")
+//    private Teacher teacher;
    
 }

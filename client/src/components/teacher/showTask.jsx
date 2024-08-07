@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import { getTaskByTeacherId, updateTaskStatus } from '../../services/taskService';
-import { useSelector } from 'react-redux';
-
+import React, { useState, useEffect } from "react";
+import {
+  getTaskByTeacherId,
+  updateTaskStatus,
+} from "../../services/taskService";
+import { useSelector } from "react-redux";
 
 const ShowTask = () => {
   const user = useSelector((state) => state.user.user);
-  const [tasks, setTasks] = useState([]); 
-  const [response, setResponse] = useState(null); 
-  
+  const [tasks, setTasks] = useState([]);
+  const [response, setResponse] = useState(null);
+
   useEffect(() => {
-    const fetchData = async () => {  
+    const fetchData = async () => {
       const response = await getTaskByTeacherId(user.id);
       setTasks(response.data);
     };
-    
+
     fetchData();
-    
   }, [user.id, response]);
-  
-  const updateTask = async(id) => {
-    
+
+  const updateTask = async (id) => {
     const res = await updateTaskStatus(id);
     console.log(res);
     setResponse(res);
   };
-  
+
   return (
     <div className="container mt-5">
       <h2>Tasks</h2>
@@ -45,9 +45,18 @@ const ShowTask = () => {
               <th scope="row">{task.id}</th>
               <td>{task.description}</td>
               <td>{task.dueDate}</td>
-              <td>{task.status}</td>
+              <td
+                style={{
+                  color : task.status == "PENDING" ? "red" : "green",
+                }}
+              >
+                {task.status}
+              </td>
               <td>
-                <button className="btn btn-primary" onClick={() => updateTask(task.id)}>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => updateTask(task.id)}
+                >
                   Mark as Completed
                 </button>
               </td>

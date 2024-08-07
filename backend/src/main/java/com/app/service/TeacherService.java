@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.app.DAO.CourseRepository;
 import com.app.DAO.StudentRepository;
+import com.app.DAO.SubjectRepository;
 import com.app.DAO.TeacherRepository;
 import com.app.DTO.StudentReqDTO;
 import com.app.DTO.TeacherReqDTO;
@@ -15,6 +16,7 @@ import com.app.DTO.UserReqDTO;
 import com.app.custom_exceptions.InvalidCredentialsException;
 import com.app.entity.Course;
 import com.app.entity.Student;
+import com.app.entity.Subject;
 import com.app.entity.Teacher;
 
 @Service
@@ -24,6 +26,10 @@ public class TeacherService {
 
 	@Autowired
 	private CourseRepository courseRepository;
+
+	
+	@Autowired
+	private SubjectRepository subjectRepository;
 
 	@Autowired
 	private ModelMapper mapper;
@@ -43,7 +49,12 @@ public class TeacherService {
 	}
 
 	public Teacher createTeacher(TeacherReqDTO teacher) {
+		Subject sub = null;
+		if(teacher.getSubjectId() != null) {
+			sub = subjectRepository.findById(teacher.getSubjectId()).orElseThrow();
+		}
 		Teacher teac = mapper.map(teacher, Teacher.class);
+		teac.setSubject(sub);
 		return teacherRepository.save(teac);
 	}
 
