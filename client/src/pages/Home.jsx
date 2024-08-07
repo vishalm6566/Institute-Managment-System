@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import imsLogo from '../components/Images/1.avif';
-import college from '../components/Images/college.jpg';
+import college from '../components/Images/bgimg.jpg';
 import AdmissionCard from '../components/Images/AdmissionCard.jpg';
 import CourseCard from '../components/Images/StudentCard.jpg';
 import StudentCard from '../components/Images/StudentCard.jpg';
@@ -21,7 +21,7 @@ const Home = () => {
 
                 <div className="">
                     <div className="bg-image">
-                        <img src={imsLogo} alt="Institute Management" style={{width : "100%", height : "100vh"}}/>
+                        <img src={college} alt="Institute Management" style={{width : "100%", height : "100vh", marginTop : "20"}}/>
                         <div className="overlay">
                             <div className="project-name">
                                 Institute Management System
