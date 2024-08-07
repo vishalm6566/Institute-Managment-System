@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { registerTeacher } from "../../services/teacherService";
 import { getAllSubject } from "../../services/subjectService";
-import { registerTeacher } from '../../services/teacherService';
 import { toast } from "react-toastify";
 
 const AddTeacher = () => {

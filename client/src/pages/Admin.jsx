@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Sidebar from "../components/admin/sidebar";
 import { Outlet, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
@@ -19,8 +18,6 @@ function Admin() {
     func();
   });
 
-  const user = useSelector((state) => state.user.user);
-  const navigate = useNavigate()
   console.log(user);
   const [admin, setAdmin] = useState(user);
 

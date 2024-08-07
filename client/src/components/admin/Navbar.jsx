@@ -3,12 +3,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import IMSlogo from "../Images/IMSlogo.jpg";
-import '../../css/custom-navbar.css';
+import '../../css/navbar.css';
 
 
 const NavBar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <nav className="navbar navbar-expand-lg navbar-light" style={{width : "100%", boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px"}}>
             <div className="container-fluid mainnavbar">
                 {/* Brand logo and name */}
                 <Link className="navbar-brand d-flex align-items-center profile-image" to="/">
