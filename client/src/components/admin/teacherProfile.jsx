@@ -5,7 +5,7 @@ const TeacherProfile = () => {
   const { id } = useParams();
   const { state } = useLocation();
   const [teacher, setTeacher] = useState(null);
-
+  console.log(state);
   useEffect(() => {
     const fetchTeacher = async () => {
       setTeacher(state);
@@ -32,7 +32,7 @@ const TeacherProfile = () => {
             <strong>Email:</strong> {teacher.email}
           </p>
           <p className="card-text">
-            <strong>Subject:</strong> {teacher.subject}
+            <strong>Subject:</strong> {teacher.subject == null ? '' : teacher.subject.name}
           </p>
           <p className="card-text">
             <strong>Address:</strong> {teacher.address}

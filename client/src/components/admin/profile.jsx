@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import feedbackIcon from "../../components/Images/feedback.png";
 import marksIcon from "../../components/Images/marks.png";
@@ -9,7 +9,6 @@ import '../../css/AdminProfile.css'
 
 const AdminProfile = () => {
   const user = useSelector((state) => state.user.user);
-  console.log(user);
   const [admin, setAdmin] = useState(user);
 
   return (

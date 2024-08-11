@@ -23,7 +23,6 @@ const AddStudent = (s) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(student);
     await registerStudent(student);
     setStudent({ name: '', email: '', password: ''});
     toast.success("Student Added Successfully")

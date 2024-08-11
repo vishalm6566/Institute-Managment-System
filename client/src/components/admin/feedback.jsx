@@ -7,7 +7,6 @@ const AdminFeedback = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await getAllFeedback();
-      console.log(response.data);
       setFeedbackList(response.data);
     };
     fetchData();
