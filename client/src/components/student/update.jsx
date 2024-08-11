@@ -8,39 +8,9 @@ import { setUser } from "../../redux/userSlice";
 const UpdateStudent = () => {
     const user = useSelector((state) => state.user.user);
     const dispatch = useDispatch();
-    console.log(user);
 
     const navigate = useNavigate();
-    // const [student, setStudent] = useState({
-    //     id: 0,
-    //     name: "",
-    //     lastName: "",
-    //     email: "",
-    //     password: "",
-    //     address: "",
-    //     phone: "",
-    //     courseId: "",
-    //     marks10th: "",
-    //     marks12th: "",
-    //     graduationMarks: "",
-    //     ...user
-    // });
     const [student, setStudent] = useState(user);
-    console.log(student);
-
-
-    //   useEffect(() => {
-    //     // const fetchStudent = async () => {
-    //     //   try {
-    //     //     const response = await axios.get(`/api/students/${id}`);
-    //     //     setStudent(response.data);
-    //     //   } catch (error) {
-    //     //     console.error("Error fetching student data", error);
-    //     //   }
-    //     // };
-
-    //     fetchStudent();
-    //   }, [id]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -52,18 +22,10 @@ const UpdateStudent = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("after update");
-        console.log(student);
         const response = await updateStudent(student);
         dispatch(setUser(response.data))
         toast.success("Student updated successfully")
         navigate("/student/profile");
-        // try {
-        //     await axios.put(`/api/students/${id}`, student);
-        //     navigate(`/admin/student/${id}`);
-        // } catch (error) {
-        //     console.error("Error updating student data", error);
-        // }
     };
 
     return (

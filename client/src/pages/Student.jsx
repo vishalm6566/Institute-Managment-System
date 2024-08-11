@@ -21,7 +21,7 @@ function Student() {
   return (
     <div className="d-flex">
       {user && <Sidebar />}
-      <div className="container-fluid p-2" style={{ marginLeft: "250px" }}>
+      <div className="container-fluid p-2">
         <h2
           className="border p-3 bg-light rounded"
           style={{ textAlign: "center", color :"white", backgroundImage: "linear-gradient(to bottom right ,white,black)"

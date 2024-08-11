@@ -9,7 +9,6 @@ import '../../css/AdminProfile.css';
 
 const StudentProfile = () => {
   const user = useSelector((state) => state.user.user);
-  console.log(user);
   const [student, setStudent] = useState(user);
 
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div className="container-fluid my-5">
+    <div className="container-fluid p-0" style={{marginLeft : 0}}>
       <footer className="text-center text-lg-start text-dark" style={{ backgroundColor: '#F8F9FA' }}>
         <section className="d-flex justify-content-between p-4 text-white" style={{ background: 'linear-gradient(to right, #00c6ff, #0072ff)' }}>
           <div className="me-5">

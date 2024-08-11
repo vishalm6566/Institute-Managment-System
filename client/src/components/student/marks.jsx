@@ -5,7 +5,6 @@ import { getAllMarksByStudentId } from '../../services/markService';
 const Marks = () => {
     const [marksData, setMarksData] = useState([]);
     const user = useSelector((state) => state.user.user);
-    console.log(user);
     const [student, setStudent] = useState(user);
 
     useEffect(() => {
