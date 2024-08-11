@@ -14,7 +14,6 @@ export async function updateMarksByStdId({ marks, subjectId, studentId, courseId
     const response = await axios.patch(`${config.url}/mark`, body)
 
     // read JSON data (response)
-    console.log(response)
     return response
 }
 
@@ -23,6 +22,5 @@ export async function getAllMarksByStudentId(studentId) {
     const response = await axios.get(`${config.url}/mark/${studentId}`)
 
     // read JSON data (response)
-    console.log(response)
     return response
 }

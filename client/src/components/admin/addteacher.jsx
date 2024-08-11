@@ -22,7 +22,6 @@ const AddTeacher = () => {
       const response = await getAllSubject();
       setSubjects(response.data);
     };
-
     fetchCourses();
   }, []);
 
@@ -34,12 +33,10 @@ const AddTeacher = () => {
       ...prev,
       [name]: value,
     }));
-    console.log(teacher);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(teacher);
     await registerTeacher(teacher);
     setTeacher({ name: "", email: "", password: "", address : "", phone : "",  });
     toast.success("Teacher Added Successfully")

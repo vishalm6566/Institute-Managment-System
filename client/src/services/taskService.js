@@ -13,7 +13,6 @@ export async function registerTask({ teacherId, description, dueDate }) {
     const response = await axios.post(`${config.url}/task/register`, body)
 
     // read JSON data (response)
-    console.log(response)
     return response
 }
 
@@ -22,7 +21,6 @@ export async function getAllTasks() {
     const response = await axios.get(`${config.url}/task`)
 
     // read JSON data (response)
-    console.log(response)
     return response
 }
 
@@ -36,7 +34,6 @@ export async function getTaskByTeacherId(teacherId) {
     const response = await axios.post(`${config.url}/task/teacher`, body)
 
     // read JSON data (response)
-    console.log(response)
     return response
 }
 
@@ -47,6 +44,5 @@ export async function updateTaskStatus(taskId) {
     const response = await axios.patch(`${config.url}/task/${taskId}`)
 
     // read JSON data (response)
-    console.log(response)
     return response
 }

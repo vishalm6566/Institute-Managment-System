@@ -7,7 +7,6 @@ const AllTask = () => {
 
   const fetchData = async () => {
     const response = await getAllTasks();
-    console.log(response);
     setTasks(response.data);
   };
 

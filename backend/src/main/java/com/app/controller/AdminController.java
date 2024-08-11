@@ -37,7 +37,11 @@ public class AdminController {
              return new ResponseEntity<>("Login failed", HttpStatus.INTERNAL_SERVER_ERROR);
          }	
     }
-
+    
+    @GetMapping("/test")
+    public String test() {
+    	return "Welcome to backend api of Institute Management System";
+    }
     
     @GetMapping("/{id}")
     public Admin getAdminById(@PathVariable Long id) {

@@ -18,7 +18,6 @@ function Admin() {
     func();
   });
 
-  console.log(user);
   const [admin, setAdmin] = useState(user);
 
 if(admin==null){

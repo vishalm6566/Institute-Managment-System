@@ -16,7 +16,6 @@ const AddTask = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log({ description, dueDate });
     await registerTask({ teacherId: id, description, dueDate });
     setDescription('');
     setDueDate(null);
