@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import imsLogo from '../components/Images/1.avif';
 import college from '../components/Images/bgimg.jpg';
-import AdmissionCard from '../components/Images/AdmissionCard.jpg';
 import CourseCard from '../components/Images/StudentCard.jpg';
 import StudentCard from '../components/Images/StudentCard.jpg';
 import NavBar from '../components/admin/Navbar';
@@ -12,7 +10,7 @@ import '../css/Home.css';
 const Home = () => {
     return (
         <>
-            <div className="container-fluid p-0">
+            <div className="container-fluid p-0" style={{marginLeft : 0}}>
             <NavBar />
                 {/*<header className="text-center my-3 header-section">
                     <h1 className="display-3 text-white">Welcome to Institute Management System</h1>

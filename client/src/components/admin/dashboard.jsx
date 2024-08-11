@@ -1,7 +1,11 @@
 import React from 'react';
 import '../../css/Dashboard.css'; 
 import { Link } from 'react-router-dom';
-import profilephoto from '../Images/teacher.jpg'
+import profilephoto from '../Images/teacher.jpg';
+import studentImg from '../Images/student.jpg'
+import feedbackImg from '../Images/feedbackimg.jfif'
+import taskImg from '../Images/taskImg.jfif'
+
 
 
 const cardData = [
@@ -15,19 +19,19 @@ const cardData = [
         title: 'Student',
         description: 'Manage courses offered.',
         link: '/admin/studentinfo',
-        image: 'https://images.unsplash.com/photo-1522211988038-6fcbb8c12c7e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        image: studentImg
     },
     {
         title: 'Feedback',
         description: 'Generate and view reports.',
         link: '/admin/feedback',
-        image: 'https://plus.unsplash.com/premium_photo-1682310566465-61013a549353?q=80&w=1824&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        image : feedbackImg
     },
     {
         title: 'Task',
         description: 'Update system settings.',
         link: '/admin/alltask',
-        image: 'https://images.unsplash.com/photo-1665808282962-9bd99d7fe3f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        image : taskImg
     },
 ];
 

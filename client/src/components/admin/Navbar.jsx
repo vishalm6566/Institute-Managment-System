@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import IMSlogo from "../Images/IMSlogo.jpg";
 import '../../css/navbar.css';
 
-
 const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light" style={{width : "100%", boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px"}}>
@@ -17,9 +16,9 @@ const NavBar = () => {
                 </Link>
 
                 {/* Navbar Toggler for responsive design*/}
-                {/*<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
-                </button>*/}
+                </button>
 
                 {/* Navbar links */}
                 <div className="collapse navbar-collapse" id="navbarNav">

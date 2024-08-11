@@ -8,8 +8,6 @@ const Course = () => {
 
   useEffect(() => {
     const fetchCourses = async () => {
-      console.log("course info useffect");
-
         const response = await getAllCourse();
         setCourses(response.data);
     };

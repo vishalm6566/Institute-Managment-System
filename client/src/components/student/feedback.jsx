@@ -7,7 +7,6 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 const StudentFeedback = () => {
     const user = useSelector((state) => state.user.user);
-    console.log(user);
     const [student, setStudent] = useState(user);
     const [name, setName] = useState(user.name);
     const [email, setEmail] = useState(user.email);
