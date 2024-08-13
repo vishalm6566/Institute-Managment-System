@@ -7,8 +7,8 @@ import '../../css/navbar.css';
 
 const NavBar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light" style={{width : "100%", boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px"}}>
-            <div className="container-fluid mainnavbar">
+        <nav className="navbar navbar-expand-lg navbar-light" style={{width : "100%", boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",background : "efe0ff40"}}>
+            <div className="container-fluid mainnavbar" style={{marginLeft : 0}}>
                 {/* Brand logo and name */}
                 <Link className="navbar-brand d-flex align-items-center profile-image" to="/">
                     <img src={IMSlogo} alt="Institute Logo" style={{ height: '40px', marginRight: '10px' }} />
