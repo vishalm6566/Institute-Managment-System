@@ -6,8 +6,8 @@ import IMSlogo from '../components/Images/IMSlogo.jpg';
 import { login } from '../services/userService';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../redux/userSlice';
-import NavBar from '../components/admin/Navbar';
-import Footer from '../components/admin/Footer';
+import NavBar from '../components/common/Navbar';
+import Footer from '../components/common/Footer';
 
 
 

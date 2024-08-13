@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import college from '../components/Images/bgimg.jpg';
 import CourseCard from '../components/Images/StudentCard.jpg';
 import StudentCard from '../components/Images/StudentCard.jpg';
-import NavBar from '../components/admin/Navbar';
-import Footer from '../components/admin/Footer';
+import NavBar from '../components/common/Navbar';
+import Footer from '../components/common/Footer';
 import '../css/Home.css';
 
 const Home = () => {
